@@ -2,7 +2,6 @@
 import BaseLayout from "@layouts/BaseLayout.astro";
 import ButtonLink from "@components/ButtonLink.astro";
 import BrandMark from "@components/BrandMark.astro";
-import Logo from "@components/Logo.astro";
 import { offers } from "@data/offers";
 import { serviceSchema, organisationSchema, websiteSchema } from "@data/schema";
 import { finalCta, getPrimaryCtaHref, homeProcessSteps, siteConfig } from "@data/site";
@@ -15,7 +14,6 @@ const primaryHref = getPrimaryCtaHref();
   title="Clawsome | Practical AI agents for SMEs"
   description="Agents work now. Clawsome sets up practical OpenClaw and Claude builds for SMEs, starting with one useful quick win."
   pathname="/"
-  hideHeader={true}
   schema={[
     organisationSchema,
     websiteSchema,
@@ -24,21 +22,10 @@ const primaryHref = getPrimaryCtaHref();
 >
   <section class="hero">
     <div class="hero-atmosphere" aria-hidden="true"></div>
-    <div class="container hero-rail">
-      <div class="hero-brand-block">
-        <p class="hero-intro">Introducing</p>
-        <div class="hero-logo-line">
-          <div class="hero-logo">
-            <Logo tone="light" />
-          </div>
-          <p class="hero-brand-note">We make agents</p>
-        </div>
-      </div>
-    </div>
     <div class="container hero-stage">
       <div class="hero-copy">
         <h1>Agents work now.</h1>
-        <p class="hero-text">We can set them up for you and start with one useful workflow.</p>
+        <p class="hero-text">We set them up for you, starting with one useful workflow.</p>
         <div class="button-row hero-actions">
           <ButtonLink
             href={primaryHref}
@@ -59,8 +46,13 @@ const primaryHref = getPrimaryCtaHref();
           </ButtonLink>
         </div>
       </div>
-      <div class="hero-mark-wrap" aria-hidden="true">
-        <BrandMark tone="red" />
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hero-mark-ghost">
+          <BrandMark tone="muted" />
+        </div>
+        <div class="hero-mark-wrap">
+          <BrandMark tone="red" />
+        </div>
       </div>
     </div>
   </section>
