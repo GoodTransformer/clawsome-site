@@ -414,6 +414,12 @@ p {
     linear-gradient(180deg, #181315 0%, #0e0c0d 100%);
 }
 
+.hero-rail {
+  position: relative;
+  z-index: 2;
+  padding-top: clamp(1.35rem, 3vw, 2rem);
+}
+
 .hero-atmosphere {
   position: absolute;
   inset: 0;
@@ -428,10 +434,10 @@ p {
 
 .hero-stage {
   position: relative;
-  min-height: min(92vh, 52rem);
+  min-height: min(88vh, 50rem);
   display: flex;
   align-items: flex-end;
-  padding: clamp(3rem, 6vw, 4.5rem) 0 var(--hero-space);
+  padding: clamp(4.5rem, 8vw, 6.5rem) 0 var(--hero-space);
 }
 
 .hero-copy {
@@ -441,7 +447,7 @@ p {
 }
 
 .hero-brand-block {
-  margin-bottom: 2rem;
+  margin-bottom: 0;
 }
 
 .hero-intro,
@@ -485,7 +491,7 @@ p {
 
 .hero-text {
   max-width: 26rem;
-  margin: 0.9rem 0 0;
+  margin: 1rem 0 0;
   color: var(--text-inverse-soft);
 }
 

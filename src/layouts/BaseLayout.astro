@@ -13,6 +13,7 @@ interface Props {
   image?: string;
   schema?: Record<string, unknown> | Array<Record<string, unknown>>;
   noindex?: boolean;
+  hideHeader?: boolean;
 }
 
 const {
@@ -21,7 +22,8 @@ const {
   pathname = "/",
   image = siteConfig.defaultOgImage,
   schema,
-  noindex = false
+  noindex = false,
+  hideHeader = false
 } = Astro.props;
 
 const canonical = absoluteUrl(pathname, siteConfig.siteUrl);
@@ -60,7 +62,7 @@ const schemaList = Array.isArray(schema) ? schema : schema ? [schema] : [];
   </head>
   <body>
     <div class="page-shell">
-      <SiteHeader />
+      {!hideHeader && <SiteHeader />}
       <slot />
       <SiteFooter />
     </div>
