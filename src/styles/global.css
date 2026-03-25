@@ -968,7 +968,19 @@ p {
   }
 }
 
-@media (max-width: 860px) {
+@media (max-width: 980px) {
+  .site-nav {
+    gap: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .header-cta {
+    min-width: 8.5rem;
+    padding-inline: 1rem;
+  }
+}
+
+@media (max-width: 720px) {
   .site-nav,
   .header-cta {
     display: none;
