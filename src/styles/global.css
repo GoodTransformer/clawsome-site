@@ -445,7 +445,7 @@ p {
 }
 
 .hero-brand-block {
-  margin-bottom: 1.3rem;
+  margin-bottom: 2rem;
 }
 
 .hero-intro,
@@ -454,37 +454,37 @@ p {
 }
 
 .hero-intro {
-  margin-bottom: 0.55rem;
-  font-size: 0.68rem;
+  margin-bottom: 0.4rem;
+  font-size: 0.62rem;
   font-weight: 750;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: rgba(247, 242, 235, 0.48);
 }
 
 .hero-logo-line {
   display: flex;
-  align-items: flex-end;
-  gap: 1rem;
+  align-items: center;
+  gap: 0.9rem;
   flex-wrap: wrap;
 }
 
 .hero-logo .logo-mark {
-  width: clamp(3rem, 5vw, 4.1rem);
-  height: clamp(3rem, 5vw, 4.1rem);
+  width: clamp(2.55rem, 4vw, 3.45rem);
+  height: clamp(2.55rem, 4vw, 3.45rem);
 }
 
 .hero-logo .logo-lockup__word {
-  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-size: clamp(1.45rem, 2.55vw, 2.05rem);
 }
 
 .hero-brand-note {
-  padding-bottom: 0.35rem;
-  font-size: clamp(0.72rem, 0.95vw, 0.82rem);
+  padding-top: 0.08rem;
+  font-size: clamp(0.64rem, 0.8vw, 0.72rem);
   font-weight: 680;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba(247, 242, 235, 0.54);
+  color: rgba(247, 242, 235, 0.5);
 }
 
 .hero-text {
