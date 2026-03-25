@@ -1,21 +1,23 @@
 <svg width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
   <path
-    d="M96 31C84 22 69 18 55 18C28 18 12 42 12 80C12 118 28 142 55 142C69 142 84 138 96 129"
+    d="M94 30C82 22 68 18 55 18C27 18 12 42 12 80C12 118 27 142 55 142C68 142 82 138 94 130"
     stroke="#B22624"
-    stroke-width="26"
-    stroke-linecap="square"
+    stroke-width="28"
+    stroke-linecap="butt"
     stroke-linejoin="miter"
   />
   <path
-    d="M89 31L145 49L139 78L119 71L104 85L77 65L92 46Z M103 49L123 56L110 67L92 60Z"
+    d="M87 31L120 6L148 24L151 57L143 74L129 50L107 42L92 57L73 41Z M92 39A5 5 0 1 0 92 49A5 5 0 1 0 92 39Z"
     fill="#B22624"
     fill-rule="evenodd"
     clip-rule="evenodd"
   />
   <path
-    d="M89 129L145 111L139 82L119 89L104 75L77 95L92 114Z M103 111L123 104L110 93L92 100Z"
+    d="M87 129L120 154L148 136L151 103L143 86L129 110L107 118L92 103L73 119Z M92 111A5 5 0 1 0 92 121A5 5 0 1 0 92 111Z"
     fill="#B22624"
     fill-rule="evenodd"
     clip-rule="evenodd"
   />
+  <path d="M102 48L126 65L110 78L88 64Z" fill="#B22624" />
+  <path d="M102 112L126 95L110 82L88 96Z" fill="#B22624" />
 </svg>
