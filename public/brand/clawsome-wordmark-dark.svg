@@ -1,4 +1,13 @@
-<svg width="520" height="88" viewBox="0 0 520 88" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="520" height="88" rx="18" fill="#F6EEE6"/>
-  <text x="28" y="57" fill="#171315" font-family="Newsreader, Georgia, serif" font-size="44" letter-spacing="-2">Clawsome</text>
+<svg width="540" height="100" viewBox="0 0 540 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <text
+    x="0"
+    y="70"
+    fill="#141011"
+    font-family="Manrope, Arial, Helvetica, sans-serif"
+    font-size="82"
+    font-weight="800"
+    letter-spacing="-4"
+  >
+    CLAWSOME
+  </text>
 </svg>

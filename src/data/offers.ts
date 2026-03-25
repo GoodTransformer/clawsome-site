@@ -6,27 +6,19 @@ export const offers: Offer[] = [
     name: "Agent Opportunity Audit",
     price: "£495 to £1,250",
     summary: "Find the first workflow worth fixing.",
-    bullets: [
-      "Short workflow review",
-      "Scope boundary",
-      "Quick ROI logic",
-      "Clear recommendation"
-    ],
-    emphasis: "Best first move",
+    bullets: ["Short review", "Scope boundary", "Clear recommendation"],
     ctaLabel: "Book an audit"
   },
   {
     slug: "quick-win-sprint",
     name: "Quick-Win Agent Sprint",
     price: "£2,500 to £6,000",
-    summary: "Build one useful agent fast.",
+    summary: "Build one agent with the right tools, approvals, and handover.",
     bullets: [
       "One bounded workflow",
-      "Required integrations",
-      "Approval logic where needed",
+      "Required integrations only",
       "Testing, training, handover"
     ],
-    emphasis: "Front-door offer",
     ctaLabel: "Start the sprint"
   },
   {
@@ -34,13 +26,7 @@ export const offers: Offer[] = [
     name: "Agent Care Plan",
     price: "£250 to £1,250 / month",
     summary: "Keep the first agent sharp.",
-    bullets: [
-      "Monitoring",
-      "Prompt updates",
-      "Minor refinements",
-      "Issue response"
-    ],
-    emphasis: "After launch",
+    bullets: ["Monitoring", "Prompt and logic updates", "Minor refinements"],
     ctaLabel: "Add care"
   },
   {
@@ -49,12 +35,10 @@ export const offers: Offer[] = [
     price: "£7,500 to £25,000+",
     summary: "Add the next agent once the first one proves out.",
     bullets: [
-      "Second or third workflows",
+      "Second or third agents",
       "Cross-team logic",
-      "Deeper operational design",
       "Scoped by complexity"
     ],
-    emphasis: "Later stage",
     ctaLabel: "Plan expansion"
   }
 ];

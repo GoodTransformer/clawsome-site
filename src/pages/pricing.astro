@@ -2,6 +2,7 @@
 import BaseLayout from "@layouts/BaseLayout.astro";
 import ButtonLink from "@components/ButtonLink.astro";
 import FAQAccordion from "@components/FAQAccordion.astro";
+import Logo from "@components/Logo.astro";
 import { faqs } from "@data/faqs";
 import { managedOperationsNote, offers } from "@data/offers";
 import { serviceSchema } from "@data/schema";
@@ -37,71 +38,61 @@ const faqSchema = {
   ]}
 >
   <section class="page-hero">
-    <div class="container page-hero__shell">
-      <div>
-        <p class="eyebrow">Pricing</p>
-        <h1>Clear price bands. Clean scope.</h1>
-        <p class="page-intro">
-          The first step should feel easy to buy and serious enough to trust.
-        </p>
-      </div>
-      <div class="page-note">
-        <p>Audit first. Quick win next. Care or expansion after proof.</p>
+    <div class="container page-hero__shell page-hero__shell--single">
+      <div class="page-hero__copy">
+        <div class="page-hero__brand">
+          <Logo tone="dark" />
+        </div>
+        <h1>Clear price bands.</h1>
+        <p class="page-intro">Enough scope to buy with confidence. No sprawl.</p>
       </div>
     </div>
   </section>
 
   <section class="section section-light">
-    <div class="container offer-table">
-      {offers.map((offer) => (
-        <article class="offer-row">
-          <div class="offer-main">
-            <p class="offer-kicker">{offer.emphasis}</p>
-            <h2>{offer.name}</h2>
-            <p>{offer.summary}</p>
-            <ul class="editorial-list">
+    <div class="container">
+      <div class="offer-stack">
+        {offers.map((offer, index) => (
+          <article class="offer-item">
+            <p class="offer-index">0{index + 1}</p>
+            <div class="offer-copy">
+              <h2>{offer.name}</h2>
+              <p>{offer.summary}</p>
+            </div>
+            <ul class="editorial-list editorial-list--compact">
               {offer.bullets.map((bullet) => (
                 <li>{bullet}</li>
               ))}
             </ul>
-          </div>
-          <div class="offer-side">
-            <div class="offer-price">{offer.price}</div>
-            <ButtonLink href="/contact/" variant="ghost">
-              {offer.ctaLabel}
-            </ButtonLink>
-          </div>
-        </article>
-      ))}
-    </div>
-  </section>
-
-  <section class="section section-tint">
-    <div class="container compact-brand-block">
-      <div>
-        <p class="eyebrow">Later stage</p>
-        <h2>{managedOperationsNote.title}</h2>
+            <div class="offer-side">
+              <div class="offer-price">{offer.price}</div>
+              <ButtonLink href="/contact/" variant="ghost">
+                {offer.ctaLabel}
+              </ButtonLink>
+            </div>
+          </article>
+        ))}
       </div>
-      <div>
-        <p>{managedOperationsNote.text}</p>
+
+      <div class="pricing-note">
+        <p>{managedOperationsNote.title}: {managedOperationsNote.text}</p>
+        <p>Pilot walkthroughs are shown in audit conversations. Public case studies follow live deployments.</p>
       </div>
     </div>
   </section>
 
-  <section class="section section-light">
-    <div class="container editorial-shell">
-      <div class="section-heading">
-        <p class="eyebrow">FAQ</p>
-        <h2>Short answers to the obvious questions.</h2>
+  <section class="section section-light faq-section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Questions.</h2>
       </div>
       <FAQAccordion items={faqs} />
     </div>
   </section>
 
   <section class="section section-cta">
-    <div class="container cta-shell">
+    <div class="container closing-shell">
       <div>
-        <p class="eyebrow">Next step</p>
         <h2>Bring the workflow, not a theory deck.</h2>
         <p>We will tell you if it is a good first agent.</p>
       </div>

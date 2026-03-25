@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
 import ButtonLink from "@components/ButtonLink.astro";
+import Logo from "@components/Logo.astro";
 import { serviceSchema } from "@data/schema";
 import { getPrimaryCtaHref } from "@data/site";
 import { useCases } from "@data/useCases";
@@ -19,16 +20,13 @@ const primaryHref = getPrimaryCtaHref();
   )}
 >
   <section class="page-hero">
-    <div class="container page-hero__shell">
-      <div>
-        <p class="eyebrow">Use cases</p>
+    <div class="container page-hero__shell page-hero__shell--single">
+      <div class="page-hero__copy">
+        <div class="page-hero__brand">
+          <Logo tone="dark" />
+        </div>
         <h1>Three clear ways to start.</h1>
-        <p class="page-intro">
-          Pick the workflow with the cleanest value signal. Keep it bounded. Train the operator. Expand later.
-        </p>
-      </div>
-      <div class="page-note">
-        <p>Meta Ads. Lead Response. Admin Recovery.</p>
+        <p class="page-intro">Growth, follow-up, or admin drag. Pick the clearest value signal.</p>
       </div>
     </div>
   </section>
@@ -36,20 +34,22 @@ const primaryHref = getPrimaryCtaHref();
   <section class="section section-light">
     <div class="container use-case-page">
       {useCases.map((item, index) => (
-        <article class="use-case-feature">
+        <article class="use-case-feature" id={item.slug}>
           <div class="use-case-feature__lead">
             <p class="case-index">0{index + 1}</p>
-            <p class="case-label">{item.name}</p>
-            <h2>{item.headline}</h2>
-            <p class="case-summary">{item.summary}</p>
-            <p class="case-line"><strong>Problem</strong>{item.problem}</p>
-            <p class="case-line"><strong>Outcome</strong>{item.outcome}</p>
+            <div>
+              <p class="case-name">{item.name}</p>
+              <h2>{item.headline}</h2>
+              <p class="case-summary">{item.summary}</p>
+              <p class="case-line"><strong>Problem</strong>{item.problem}</p>
+              <p class="case-line"><strong>Outcome</strong>{item.outcome}</p>
+            </div>
           </div>
 
-          <div class="use-case-feature__meta">
+          <div class="use-case-feature__grid">
             <div>
               <p class="mini-heading">Agent handles</p>
-              <ul class="editorial-list">
+              <ul class="editorial-list editorial-list--compact">
                 {item.handles.map((detail) => (
                   <li>{detail}</li>
                 ))}
@@ -57,7 +57,7 @@ const primaryHref = getPrimaryCtaHref();
             </div>
             <div>
               <p class="mini-heading">Human keeps</p>
-              <ul class="editorial-list">
+              <ul class="editorial-list editorial-list--compact">
                 {item.human.map((detail) => (
                   <li>{detail}</li>
                 ))}
@@ -65,7 +65,7 @@ const primaryHref = getPrimaryCtaHref();
             </div>
             <div>
               <p class="mini-heading">Commercial outcomes</p>
-              <ul class="editorial-list">
+              <ul class="editorial-list editorial-list--compact">
                 {item.results.map((detail) => (
                   <li>{detail}</li>
                 ))}
@@ -85,9 +85,8 @@ const primaryHref = getPrimaryCtaHref();
   </section>
 
   <section class="section section-cta">
-    <div class="container cta-shell">
+    <div class="container closing-shell">
       <div>
-        <p class="eyebrow">Start here</p>
         <h2>Choose the workflow with the clearest value.</h2>
         <p>That is usually the right first agent.</p>
       </div>

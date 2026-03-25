@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
+import Logo from "@components/Logo.astro";
 import { termsSections } from "@data/legal";
 ---
 
@@ -9,9 +10,11 @@ import { termsSections } from "@data/legal";
   pathname="/terms/"
 >
   <section class="page-hero">
-    <div class="container page-hero__shell">
-      <div>
-        <p class="eyebrow">Terms</p>
+    <div class="container page-hero__shell page-hero__shell--single">
+      <div class="page-hero__copy">
+        <div class="page-hero__brand">
+          <Logo tone="dark" />
+        </div>
         <h1>Website terms.</h1>
         <p class="page-intro">Simple public-site terms, separate from project agreements.</p>
       </div>

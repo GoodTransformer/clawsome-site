@@ -4,7 +4,6 @@ import { getAbsoluteSiteUrl } from "@data/site";
 const routes = [
   "/",
   "/use-cases/",
-  "/how-it-works/",
   "/pricing/",
   "/contact/",
   "/privacy-policy/",

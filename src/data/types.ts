@@ -25,17 +25,11 @@ export type Offer = {
   price: string;
   summary: string;
   bullets: string[];
-  emphasis?: string;
   ctaLabel: string;
 };
 
 export type ProcessStep = {
   index: string;
-  title: string;
-  detail: string;
-};
-
-export type TrustPrinciple = {
   title: string;
   detail: string;
 };

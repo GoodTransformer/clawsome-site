@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
+import Logo from "@components/Logo.astro";
 import { cookieSections } from "@data/legal";
 ---
 
@@ -9,9 +10,11 @@ import { cookieSections } from "@data/legal";
   pathname="/cookie-notice/"
 >
   <section class="page-hero">
-    <div class="container page-hero__shell">
-      <div>
-        <p class="eyebrow">Cookies</p>
+    <div class="container page-hero__shell page-hero__shell--single">
+      <div class="page-hero__copy">
+        <div class="page-hero__brand">
+          <Logo tone="dark" />
+        </div>
         <h1>Cookie notice.</h1>
         <p class="page-intro">Built to stay lean. Review before live analytics go in.</p>
       </div>

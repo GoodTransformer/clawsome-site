@@ -1,21 +1,19 @@
 ---
+import BrandMark from "./BrandMark.astro";
+
 interface Props {
   tone?: "light" | "dark";
   wordmark?: boolean;
 }
 
 const { tone = "dark", wordmark = true } = Astro.props;
-const mark = "#B11F27";
-const support = tone === "dark" ? "#171315" : "#F6EEE6";
 ---
 
 <span class="logo-lockup" aria-label="Clawsome">
   <span class="logo-mark" aria-hidden="true">
-    <svg viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M18 18H70L50 64L70 110H18L42 64L18 18Z" fill={mark} />
-      <path d="M110 18H58L78 64L58 110H110L86 64L110 18Z" fill={support} />
-      <rect x="58" y="24" width="12" height="80" fill={tone === "dark" ? "#F6EEE6" : "#171315"} />
-    </svg>
+    <BrandMark tone="red" />
   </span>
-  {wordmark && <span class="logo-lockup__word">Clawsome</span>}
+  {wordmark && (
+    <span class={`logo-lockup__word ${tone === "light" ? "is-light" : "is-dark"}`}>Clawsome</span>
+  )}
 </span>

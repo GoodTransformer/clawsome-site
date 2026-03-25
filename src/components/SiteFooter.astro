@@ -19,7 +19,7 @@ const primaryHref = getPrimaryCtaHref();
       <a href={withBase("/")} aria-label="Clawsome home">
         <Logo tone="light" />
       </a>
-      <p>Practical OpenClaw and Claude builds for high-value SME workflows.</p>
+      <p>One useful agent first. Practical OpenClaw and Claude builds for SME workflows.</p>
     </div>
 
     <nav class="footer-nav" aria-label="Footer">
@@ -43,7 +43,7 @@ const primaryHref = getPrimaryCtaHref();
   </div>
 
   <div class="container footer-meta">
-    <p>{siteConfig.name} • {siteConfig.location}</p>
+    <p>{siteConfig.credibilityNote}</p>
     <div class="footer-legal">
       {legalNavigation.map((item) => (
         <a href={withBase(item.href)}>{item.label}</a>

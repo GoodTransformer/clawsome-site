@@ -1,11 +1,64 @@
 <svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="1200" height="630" fill="#F6EEE6"/>
-  <rect x="42" y="42" width="1116" height="546" rx="34" stroke="rgba(23,19,21,0.14)"/>
-  <path d="M744 114H984L888 316L984 518H744L844 316L744 114Z" fill="#B11F27"/>
-  <path d="M1110 114H870L966 316L870 518H1110L1010 316L1110 114Z" fill="#171315"/>
-  <rect x="870" y="146" width="54" height="340" fill="#F6EEE6"/>
-  <text x="110" y="160" fill="#171315" font-family="Newsreader, Georgia, serif" font-size="44" letter-spacing="-1">Clawsome</text>
-  <text x="110" y="310" fill="#171315" font-family="Newsreader, Georgia, serif" font-size="110" letter-spacing="-4">Agents work now.</text>
-  <text x="110" y="384" fill="#171315" font-family="Manrope, Arial, sans-serif" font-size="34">We can set them up for you and start your journey.</text>
-  <text x="110" y="452" fill="rgba(23,19,21,0.72)" font-family="Manrope, Arial, sans-serif" font-size="26">Practical OpenClaw and Claude builds for high-value SME workflows.</text>
+  <defs>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(924 182) rotate(123.881) scale(420.993 446.723)">
+      <stop stop-color="#B22624" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#B22624" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="#120F10"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <g opacity="0.15" transform="translate(760 106) scale(2.55)">
+    <path
+      d="M96 31C84 22 69 18 55 18C28 18 12 42 12 80C12 118 28 142 55 142C69 142 84 138 96 129"
+      stroke="#B22624"
+      stroke-width="26"
+      stroke-linecap="square"
+      stroke-linejoin="miter"
+    />
+    <path
+      d="M89 31L145 49L139 78L119 71L104 85L77 65L92 46Z M103 49L123 56L110 67L92 60Z"
+      fill="#B22624"
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+    />
+    <path
+      d="M89 129L145 111L139 82L119 89L104 75L77 95L92 114Z M103 111L123 104L110 93L92 100Z"
+      fill="#B22624"
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+    />
+  </g>
+  <g transform="translate(80 84)">
+    <path
+      d="M71 23C62 16 51 13 40 13C20 13 8 31 8 59C8 87 20 105 40 105C51 105 62 102 71 95"
+      stroke="#B22624"
+      stroke-width="19"
+      stroke-linecap="square"
+      stroke-linejoin="miter"
+    />
+    <path
+      d="M66 23L106 36L101 57L86 52L75 62L56 48L68 34Z M76 36L91 41L81 49L68 44Z"
+      fill="#B22624"
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+    />
+    <path
+      d="M66 95L106 82L101 61L86 66L75 56L56 70L68 84Z M76 82L91 77L81 69L68 74Z"
+      fill="#B22624"
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+    />
+  </g>
+  <text x="218" y="170" fill="#F7F2EB" font-family="Manrope, Arial, Helvetica, sans-serif" font-size="58" font-weight="800" letter-spacing="-2.5">
+    CLAWSOME
+  </text>
+  <text x="80" y="320" fill="#F7F2EB" font-family="Georgia, 'Times New Roman', serif" font-size="104" letter-spacing="-4">
+    Agents work now.
+  </text>
+  <text x="80" y="386" fill="#D8CEC3" font-family="Manrope, Arial, Helvetica, sans-serif" font-size="28" font-weight="600">
+    One useful agent first. Practical OpenClaw and Claude builds for SME workflows.
+  </text>
+  <text x="80" y="520" fill="#D8CEC3" font-family="Manrope, Arial, Helvetica, sans-serif" font-size="22" font-weight="600" letter-spacing="0.5">
+    goodtransformer.github.io/clawsome-site
+  </text>
 </svg>

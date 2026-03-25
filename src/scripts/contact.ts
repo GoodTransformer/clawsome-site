@@ -15,10 +15,8 @@ function buildMailtoUrl(formData: FormData, email: string) {
     `Name: ${formData.get("name") || ""}`,
     `Business: ${formData.get("business") || ""}`,
     `Email: ${formData.get("email") || ""}`,
-    `Website: ${formData.get("website") || ""}`,
     `Workflow drag: ${formData.get("workflow") || ""}`,
     `Best quick win: ${formData.get("quickWin") || ""}`,
-    `Lead volume / spend / admin time: ${formData.get("context") || ""}`,
     "",
     `${formData.get("message") || ""}`
   ];

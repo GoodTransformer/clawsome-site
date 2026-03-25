@@ -1,19 +1,11 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
 import ButtonLink from "@components/ButtonLink.astro";
-import HeroVisual from "@components/HeroVisual.astro";
+import BrandMark from "@components/BrandMark.astro";
+import Logo from "@components/Logo.astro";
 import { offers } from "@data/offers";
-import { withBase } from "@data/paths";
 import { serviceSchema, organisationSchema, websiteSchema } from "@data/schema";
-import {
-  finalCta,
-  founderBlock,
-  getPrimaryCtaHref,
-  homeProcessSteps,
-  proofBlock,
-  siteConfig,
-  trustPrinciples
-} from "@data/site";
+import { finalCta, getPrimaryCtaHref, homeProcessSteps, siteConfig } from "@data/site";
 import { useCases } from "@data/useCases";
 
 const primaryHref = getPrimaryCtaHref();
@@ -30,16 +22,14 @@ const primaryHref = getPrimaryCtaHref();
   ]}
 >
   <section class="hero">
-    <div class="container hero-shell">
+    <div class="hero-atmosphere" aria-hidden="true"></div>
+    <div class="container hero-stage">
       <div class="hero-copy">
-        <div class="hero-brand">
-          <img src={withBase("/brand/clawsome-mark-red.svg")} alt="" width="54" height="54" />
-          <span>Clawsome</span>
+        <div class="hero-logo">
+          <Logo tone="light" />
         </div>
-        <p class="eyebrow">Practical AI agent setup for SMEs</p>
         <h1>Agents work now.</h1>
-        <p class="hero-subline">We can set them up for you and start your journey.</p>
-        <p class="hero-note">Start with one useful workflow.</p>
+        <p class="hero-text">We can set them up for you and start with one useful workflow.</p>
         <div class="button-row hero-actions">
           <ButtonLink
             href={primaryHref}
@@ -60,44 +50,43 @@ const primaryHref = getPrimaryCtaHref();
           </ButtonLink>
         </div>
       </div>
-
-      <HeroVisual />
+      <div class="hero-mark-wrap" aria-hidden="true">
+        <div class="hero-mark-orbit"></div>
+        <BrandMark tone="red" />
+      </div>
     </div>
   </section>
 
   <section class="section section-light">
-    <div class="container editorial-shell">
-      <div class="section-heading">
-        <p class="eyebrow">Use cases</p>
-        <h2>Three fast ways to start.</h2>
-        <p>These do the explanatory work.</p>
+    <div class="container">
+      <div class="section-head section-head--split">
+        <h2>Three quick wins.</h2>
+        <ButtonLink href="/use-cases/" variant="ghost">
+          Use cases
+        </ButtonLink>
       </div>
 
-      <div class="case-stack">
+      <div class="case-list">
         {useCases.map((item, index) => (
-          <article class="case-row">
-            <div class="case-index">0{index + 1}</div>
-            <div class="case-main">
-              <p class="case-label">{item.name}</p>
-              <h3>{item.headline}</h3>
-              <p class="case-summary">{item.summary}</p>
-              <div class="case-lines">
-                <p><strong>Problem</strong>{item.problem}</p>
-                <p><strong>Outcome</strong>{item.outcome}</p>
+          <article class="case-block">
+            <div class="case-block__lead">
+              <p class="case-index">0{index + 1}</p>
+              <div>
+                <p class="case-name">{item.name}</p>
+                <h3>{item.headline}</h3>
               </div>
             </div>
-            <div class="case-detail">
-              <ul class="editorial-list">
-                {item.handles.map((detail) => (
-                  <li>{detail}</li>
-                ))}
-              </ul>
-              <div class="case-meta">
-                {item.results.map((result) => (
-                  <span>{result}</span>
-                ))}
-              </div>
-              <ButtonLink href="/use-cases/" variant="ghost">
+            <div class="case-block__copy">
+              <p class="case-line"><strong>Problem</strong>{item.problem}</p>
+              <p class="case-line"><strong>Outcome</strong>{item.outcome}</p>
+            </div>
+            <ul class="editorial-list editorial-list--compact">
+              {item.handles.slice(0, 2).map((detail) => (
+                <li>{detail}</li>
+              ))}
+            </ul>
+            <div class="case-block__cta">
+              <ButtonLink href={`/use-cases/#${item.slug}`} variant="ghost">
                 {item.ctaLabel}
               </ButtonLink>
             </div>
@@ -107,59 +96,19 @@ const primaryHref = getPrimaryCtaHref();
     </div>
   </section>
 
-  <section class="section section-dark">
-    <div class="container editorial-shell">
-      <div class="section-heading">
-        <p class="eyebrow">How it works</p>
-        <h2>Short path. Clear ownership.</h2>
-        <p>Find it. Build it. Train it. Prove it.</p>
+  <section class="section section-light" id="how-it-works">
+    <div class="container">
+      <div class="section-head">
+        <h2>Built to land cleanly.</h2>
+        <p>OpenClaw for action. Claude for reasoning. Human sign-off where it matters.</p>
       </div>
 
-      <div class="process-grid">
+      <div class="operating-grid">
         {homeProcessSteps.map((step) => (
-          <article class="process-item">
-            <span class="process-number">{step.index}</span>
+          <article class="operating-step">
+            <p class="process-number">{step.index}</p>
             <h3>{step.title}</h3>
             <p>{step.detail}</p>
-          </article>
-        ))}
-      </div>
-
-      <div class="trust-strip">
-        {trustPrinciples.map((item) => (
-          <article class="trust-item">
-            <h3>{item.title}</h3>
-            <p>{item.detail}</p>
-          </article>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section class="section section-light">
-    <div class="container editorial-shell">
-      <div class="section-heading">
-        <p class="eyebrow">Offers</p>
-        <h2>Productised, not bloated.</h2>
-        <p>Quick to understand. Clear to buy.</p>
-      </div>
-
-      <div class="offer-table">
-        {offers.map((offer) => (
-          <article class="offer-row">
-            <div class="offer-main">
-              <p class="offer-kicker">{offer.emphasis}</p>
-              <h3>{offer.name}</h3>
-              <p>{offer.summary}</p>
-              <ul class="editorial-list">
-                {offer.bullets.map((bullet) => (
-                  <li>{bullet}</li>
-                ))}
-              </ul>
-            </div>
-            <div class="offer-side">
-              <div class="offer-price">{offer.price}</div>
-            </div>
           </article>
         ))}
       </div>
@@ -167,41 +116,40 @@ const primaryHref = getPrimaryCtaHref();
   </section>
 
   <section class="section section-tint">
-    <div class="container proof-shell">
-      <div class="proof-copy">
-        <p class="eyebrow">Proof</p>
-        <h2>{proofBlock.title}</h2>
-        <p>{proofBlock.text}</p>
+    <div class="container">
+      <div class="section-head section-head--split">
+        <div>
+          <h2>Clear offers.</h2>
+          <p>Enough scope to buy with confidence.</p>
+        </div>
+        <ButtonLink href="/pricing/" variant="ghost">
+          Full pricing
+        </ButtonLink>
       </div>
-      <div class="proof-diagram" aria-hidden="true">
-        <div>Workflow</div>
-        <span></span>
-        <div>Agent</div>
-        <span></span>
-        <div>Approval</div>
-        <span></span>
-        <div>Action</div>
-      </div>
-    </div>
-  </section>
 
-  <section class="section section-light">
-    <div class="container compact-brand-block">
-      <div>
-        <p class="eyebrow">Clawsome</p>
-        <h2>{founderBlock.title}</h2>
-      </div>
-      <div>
-        <p>{founderBlock.text}</p>
-        <p class="brand-credit">{siteConfig.credibilityNote}</p>
+      <div class="offer-stack">
+        {offers.map((offer, index) => (
+          <article class="offer-item">
+            <p class="offer-index">0{index + 1}</p>
+            <div class="offer-copy">
+              <h3>{offer.name}</h3>
+              <p>{offer.summary}</p>
+            </div>
+            <ul class="editorial-list editorial-list--compact">
+              {offer.bullets.slice(0, 3).map((bullet) => (
+                <li>{bullet}</li>
+              ))}
+            </ul>
+            <div class="offer-price">{offer.price}</div>
+          </article>
+        ))}
       </div>
     </div>
   </section>
 
   <section class="section section-cta">
-    <div class="container cta-shell">
+    <div class="container closing-shell">
       <div>
-        <p class="eyebrow">Next step</p>
         <h2>{finalCta.title}</h2>
         <p>{finalCta.text}</p>
       </div>

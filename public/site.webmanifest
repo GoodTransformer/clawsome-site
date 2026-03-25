@@ -1,7 +1,7 @@
 {
   "name": "Clawsome",
   "short_name": "Clawsome",
-  "description": "Practical AI agent setup for SMEs.",
+  "description": "One useful agent first for SME workflows.",
   "icons": [
     {
       "src": "favicons/favicon-192x192.png",
@@ -14,7 +14,7 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "#0b1011",
-  "background_color": "#0b1011",
+  "theme_color": "#120f10",
+  "background_color": "#120f10",
   "display": "standalone"
 }

@@ -1,5 +1,21 @@
-<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M18 18H70L50 64L70 110H18L42 64L18 18Z" fill="#B11F27"/>
-  <path d="M110 18H58L78 64L58 110H110L86 64L110 18Z" fill="#F6EEE6"/>
-  <rect x="58" y="24" width="12" height="80" fill="#171315"/>
+<svg width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path
+    d="M96 31C84 22 69 18 55 18C28 18 12 42 12 80C12 118 28 142 55 142C69 142 84 138 96 129"
+    stroke="#F7F2EB"
+    stroke-width="26"
+    stroke-linecap="square"
+    stroke-linejoin="miter"
+  />
+  <path
+    d="M89 31L145 49L139 78L119 71L104 85L77 65L92 46Z M103 49L123 56L110 67L92 60Z"
+    fill="#F7F2EB"
+    fill-rule="evenodd"
+    clip-rule="evenodd"
+  />
+  <path
+    d="M89 129L145 111L139 82L119 89L104 75L77 95L92 114Z M103 111L123 104L110 93L92 100Z"
+    fill="#F7F2EB"
+    fill-rule="evenodd"
+    clip-rule="evenodd"
+  />
 </svg>

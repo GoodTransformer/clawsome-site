@@ -5,28 +5,24 @@ export const useCases: UseCase[] = [
     slug: "meta-ads",
     name: "Meta Ads Agent",
     shortLabel: "Meta Ads",
-    headline: "Ship more tests without the copy churn.",
+    headline: "Ship more tests without the copy drag.",
     summary:
-      "Turns a live offer and brief into sharper variants, cleaner routing, and faster campaign setup.",
-    problem: "Paid teams lose time in drafting, asset chasing, and approval loops.",
-    outcome: "More variants live, with less production drag.",
+      "Turns one offer into sharper variants, cleaner routing, and faster campaign setup.",
+    problem: "Briefs, asset chasing, and approval loops slow campaign launch.",
+    outcome: "More variants live with less production time.",
     handles: [
-      "Drafts new angles and ad variants",
-      "Routes copy, assets, and approvals",
-      "Cuts brief-to-launch time"
+      "Drafts fresh angles and variants",
+      "Routes copy, assets, and sign-off",
+      "Keeps brief-to-launch moving"
     ],
-    human: [
-      "Offer decisions",
-      "Final creative approval",
-      "Budget control"
-    ],
+    human: ["Offer decisions", "Final creative sign-off", "Budget control"],
     results: [
       "Faster setup",
       "More tests shipped",
       "Lower production time"
     ],
     suits:
-      "Agencies, paid social teams, and founder-led brands spending on Meta.",
+      "Best for agencies, paid teams, and brands spending consistently on Meta.",
     metaDescription:
       "Meta Ads quick wins for SMEs: more tests shipped, less production drag, clear human approval.",
     ctaLabel: "Discuss Meta Ads"
@@ -35,28 +31,20 @@ export const useCases: UseCase[] = [
     slug: "lead-response",
     name: "Lead Response Agent",
     shortLabel: "Lead Response",
-    headline: "Reply faster before the lead goes cold.",
+    headline: "Reply before the lead goes cold.",
     summary:
-      "Monitors enquiries, prepares the right response, and routes hotter prospects to the right human.",
-    problem: "Missed follow-up quietly kills meetings, pipeline, and trust.",
-    outcome: "Faster responses and fewer leads left sitting.",
+      "Monitors enquiries, drafts the reply, and routes hotter prospects fast.",
+    problem: "Missed follow-up quietly kills meetings and pipeline.",
+    outcome: "Faster replies and fewer leads left sitting.",
     handles: [
-      "Watches the agreed inbox or channel",
+      "Watches the agreed inbox or form",
       "Enriches and drafts first replies",
-      "Routes the right prospects fast"
+      "Routes hot prospects fast"
     ],
-    human: [
-      "Pricing",
-      "Sensitive sales conversations",
-      "Final relationship ownership"
-    ],
-    results: [
-      "Faster response",
-      "More meetings booked",
-      "Lower drop-off"
-    ],
+    human: ["Pricing", "Sensitive sales calls", "Final relationship ownership"],
+    results: ["Faster response", "More meetings booked", "Lower drop-off"],
     suits:
-      "Founder-led B2B firms, service businesses, and lean sales teams.",
+      "Best for service firms, founder-led sales teams, and lean B2B operations.",
     metaDescription:
       "Lead response automation for SMEs with faster follow-up, clearer routing, and human control where it matters.",
     ctaLabel: "Review lead response"
@@ -67,9 +55,9 @@ export const useCases: UseCase[] = [
     shortLabel: "Admin Recovery",
     headline: "Take the heat out of repetitive admin.",
     summary:
-      "Chases invoices, routes requests, drafts updates, and keeps routine coordination moving.",
-    problem: "Admin drag slows cash collection, clogs queues, and burns good time.",
-    outcome: "Less backlog, less chasing, better cash discipline.",
+      "Chases invoices, routes requests, and keeps routine coordination moving.",
+    problem: "Admin drag slows cash collection and clogs the queue.",
+    outcome: "Less backlog and better cash discipline.",
     handles: [
       "Invoice chasing and admin reminders",
       "Request and document routing",
@@ -83,10 +71,10 @@ export const useCases: UseCase[] = [
     results: [
       "Hours saved",
       "Lower backlog",
-      "Better cash collection speed"
+      "Better cash collection"
     ],
     suits:
-      "Professional services firms and admin-heavy SMEs with workflow drag.",
+      "Best for professional services firms and admin-heavy SMEs.",
     metaDescription:
       "Admin recovery quick wins for SMEs, from invoice chasing to routing and triage, with clear human escalation.",
     ctaLabel: "Discuss admin recovery"

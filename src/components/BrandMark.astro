@@ -1,0 +1,47 @@
+---
+interface Props {
+  tone?: "red" | "ink" | "light" | "muted";
+  title?: string;
+}
+
+const { tone = "red", title } = Astro.props;
+
+const palette = {
+  red: "#B22624",
+  ink: "#141011",
+  light: "#F7F2EB",
+  muted: "#D7CEC4"
+};
+
+const color = palette[tone];
+---
+
+<svg
+  viewBox="0 0 160 160"
+  xmlns="http://www.w3.org/2000/svg"
+  class="brand-mark"
+  role={title ? "img" : undefined}
+  aria-label={title}
+  aria-hidden={title ? undefined : "true"}
+>
+  <path
+    d="M96 31C84 22 69 18 55 18C28 18 12 42 12 80C12 118 28 142 55 142C69 142 84 138 96 129"
+    fill="none"
+    stroke={color}
+    stroke-width="26"
+    stroke-linecap="square"
+    stroke-linejoin="miter"
+  />
+  <path
+    d="M89 31L145 49L139 78L119 71L104 85L77 65L92 46Z M103 49L123 56L110 67L92 60Z"
+    fill={color}
+    fill-rule="evenodd"
+    clip-rule="evenodd"
+  />
+  <path
+    d="M89 129L145 111L139 82L119 89L104 75L77 95L92 114Z M103 111L123 104L110 93L92 100Z"
+    fill={color}
+    fill-rule="evenodd"
+    clip-rule="evenodd"
+  />
+</svg>
