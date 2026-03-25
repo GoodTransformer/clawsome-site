@@ -31,36 +31,35 @@ const { endpoint = "", fallbackEmail, thankYouPath = "/thank-you/" } = Astro.pro
       <input type="email" name="email" autocomplete="email" required />
     </label>
     <label>
-      Website
-      <input type="url" name="website" placeholder="https://example.com" />
-    </label>
-    <label>
-      Best first quick win
+      First quick win
       <select name="quickWin" required>
-        <option value="Meta Ads Agent">Meta Ads Agent</option>
-        <option value="Lead Response Agent">Lead Response Agent</option>
-        <option value="Admin Recovery Agent">Admin Recovery Agent</option>
+        <option value="Meta Ads">Meta Ads</option>
+        <option value="Lead Response">Lead Response</option>
+        <option value="Admin Recovery">Admin Recovery</option>
         <option value="Not sure yet">Not sure yet</option>
       </select>
-    </label>
-    <label>
-      Lead volume, spend, or admin time
-      <input type="text" name="context" placeholder="Optional context that helps scope the first win" />
     </label>
   </div>
 
   <label>
-    What workflow is causing drag?
-    <textarea name="workflow" required></textarea>
+    Workflow drag
+    <textarea
+      name="workflow"
+      required
+      placeholder="What is slow, repetitive, or getting missed?"
+    ></textarea>
   </label>
 
   <label>
-    Message
-    <textarea name="message" placeholder="Optional detail about systems, timings, or the current process"></textarea>
+    Useful context
+    <textarea
+      name="message"
+      placeholder="Optional. Tools, volume, timing, or anything else that helps."
+    ></textarea>
   </label>
 
   <div class="button-row">
-    <button class="button primary" type="submit">Send audit request</button>
+    <button class="button primary" type="submit">Send the workflow</button>
   </div>
   <p class="form-status" data-form-status aria-live="polite"></p>
 </form>

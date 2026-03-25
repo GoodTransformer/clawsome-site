@@ -1,16 +1,12 @@
 import type { APIRoute } from "astro";
 import { getAbsoluteSiteUrl } from "@data/site";
-import { useCases } from "@data/useCases";
 
 const routes = [
   "/",
-  "/example-agents/",
+  "/use-cases/",
   "/how-it-works/",
-  "/trust-and-control/",
   "/pricing/",
-  "/about/",
   "/contact/",
-  "/faq/",
   "/privacy-policy/",
   "/cookie-notice/",
   "/terms/",
@@ -18,12 +14,7 @@ const routes = [
 ];
 
 export const GET: APIRoute = () => {
-  const allRoutes = [
-    ...routes,
-    ...useCases.map((item) => `/use-cases/${item.slug}/`)
-  ];
-
-  const urls = allRoutes
+  const urls = routes
     .map((path) => `<url><loc>${getAbsoluteSiteUrl(path)}</loc></url>`)
     .join("");
 

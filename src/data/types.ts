@@ -7,32 +7,25 @@ export type UseCase = {
   slug: string;
   name: string;
   shortLabel: string;
+  headline: string;
   summary: string;
+  problem: string;
+  outcome: string;
+  handles: string[];
+  human: string[];
+  results: string[];
+  suits: string;
   metaDescription: string;
-  pain: string;
-  whatItDoes: string[];
-  whyItSells: string;
-  outcomes: string[];
-  proofAngles: string[];
-  whatStaysHuman: string[];
-  whoItSuits: string[];
-  workflow: {
-    title: string;
-    detail: string;
-  }[];
-  trustNotes: string[];
   ctaLabel: string;
 };
 
 export type Offer = {
   slug: string;
   name: string;
-  purpose: string;
-  scope: string;
-  includes: string[];
-  suits: string;
-  pricing: string;
-  role: string;
+  price: string;
+  summary: string;
+  bullets: string[];
+  emphasis?: string;
   ctaLabel: string;
 };
 
@@ -45,14 +38,6 @@ export type ProcessStep = {
 export type TrustPrinciple = {
   title: string;
   detail: string;
-};
-
-export type ProofAsset = {
-  title: string;
-  type: string;
-  description: string;
-  status: string;
-  href: string;
 };
 
 export type FaqItem = {

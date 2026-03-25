@@ -1,30 +1,11 @@
 <svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="1200" height="630" fill="#0B1011"/>
-  <circle cx="900" cy="120" r="180" fill="url(#paint0_radial)" fill-opacity="0.8"/>
-  <rect x="48" y="48" width="1104" height="534" rx="40" fill="url(#paint1_linear)" stroke="rgba(255,255,255,0.12)"/>
-  <g opacity="0.28">
-    <path d="M760 120H1020C1035.46 120 1048 132.536 1048 148V304H1014V224C1014 215.163 1006.84 208 998 208H760V120Z" fill="#79EBCD"/>
-    <path d="M648 446H908C916.837 446 924 438.837 924 430V350H958V506C958 521.464 945.464 534 930 534H648V446Z" fill="#F7F3EC"/>
-    <path d="M648 120H692V534H648V120Z" fill="rgba(247,243,236,0.16)"/>
-  </g>
-  <g transform="translate(110 94)">
-    <path d="M23 32C23 25.373 28.373 20 35 20H60V44H41C37.686 44 35 46.686 35 50V61H23V32Z" fill="#F7F3EC"/>
-    <path d="M97 88C97 94.627 91.627 100 85 100H60V76H79C82.314 76 85 73.314 85 70V59H97V88Z" fill="#F7F3EC"/>
-    <path d="M60 20H85C91.627 20 97 25.373 97 32V61H85V50C85 46.686 82.314 44 79 44H60V20Z" fill="#79EBCD"/>
-    <path d="M60 100H35C28.373 100 23 94.627 23 88V59H35V70C35 73.314 37.686 76 41 76H60V100Z" fill="#79EBCD"/>
-  </g>
-  <text x="250" y="190" fill="#F7F3EC" font-family="Fraunces, Georgia, serif" font-size="46" letter-spacing="12">CLAWSOME</text>
-  <text x="110" y="330" fill="#F7F3EC" font-family="Fraunces, Georgia, serif" font-size="94">Agents work now.</text>
-  <text x="110" y="402" fill="rgba(247,243,236,0.78)" font-family="Manrope, Arial, sans-serif" font-size="34">We can set them up for you and start your journey.</text>
-  <text x="110" y="472" fill="rgba(247,243,236,0.72)" font-family="Manrope, Arial, sans-serif" font-size="26">Practical OpenClaw and Claude automations for high-value business workflows.</text>
-  <defs>
-    <radialGradient id="paint0_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(900 120) rotate(90) scale(180)">
-      <stop stop-color="#79EBCD"/>
-      <stop offset="1" stop-color="#79EBCD" stop-opacity="0"/>
-    </radialGradient>
-    <linearGradient id="paint1_linear" x1="600" y1="48" x2="600" y2="582" gradientUnits="userSpaceOnUse">
-      <stop stop-color="rgba(255,255,255,0.08)"/>
-      <stop offset="1" stop-color="rgba(255,255,255,0.02)"/>
-    </linearGradient>
-  </defs>
+  <rect width="1200" height="630" fill="#F6EEE6"/>
+  <rect x="42" y="42" width="1116" height="546" rx="34" stroke="rgba(23,19,21,0.14)"/>
+  <path d="M744 114H984L888 316L984 518H744L844 316L744 114Z" fill="#B11F27"/>
+  <path d="M1110 114H870L966 316L870 518H1110L1010 316L1110 114Z" fill="#171315"/>
+  <rect x="870" y="146" width="54" height="340" fill="#F6EEE6"/>
+  <text x="110" y="160" fill="#171315" font-family="Newsreader, Georgia, serif" font-size="44" letter-spacing="-1">Clawsome</text>
+  <text x="110" y="310" fill="#171315" font-family="Newsreader, Georgia, serif" font-size="110" letter-spacing="-4">Agents work now.</text>
+  <text x="110" y="384" fill="#171315" font-family="Manrope, Arial, sans-serif" font-size="34">We can set them up for you and start your journey.</text>
+  <text x="110" y="452" fill="rgba(23,19,21,0.72)" font-family="Manrope, Arial, sans-serif" font-size="26">Practical OpenClaw and Claude builds for high-value SME workflows.</text>
 </svg>

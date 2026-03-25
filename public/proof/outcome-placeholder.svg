@@ -1,9 +1,0 @@
-<svg width="960" height="600" viewBox="0 0 960 600" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="960" height="600" rx="28" fill="#101617"/>
-  <rect x="72" y="86" width="816" height="428" rx="30" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.12)"/>
-  <text x="120" y="166" fill="#79EBCD" font-family="Manrope, Arial, sans-serif" font-size="20" letter-spacing="4">OUTCOME EXAMPLE STRUCTURE</text>
-  <text x="120" y="250" fill="#F7F3EC" font-family="Fraunces, Georgia, serif" font-size="64">One workflow.</text>
-  <text x="120" y="322" fill="#F7F3EC" font-family="Fraunces, Georgia, serif" font-size="64">One measured gain.</text>
-  <text x="120" y="394" fill="#F7F3EC" font-family="Fraunces, Georgia, serif" font-size="64">One clear result.</text>
-  <text x="120" y="466" fill="rgba(247,243,236,0.72)" font-family="Manrope, Arial, sans-serif" font-size="26">Replace this placeholder with a short operational proof block once live data is available.</text>
-</svg>

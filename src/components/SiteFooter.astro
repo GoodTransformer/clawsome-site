@@ -1,58 +1,53 @@
 ---
 import Logo from "./Logo.astro";
 import { withBase } from "@data/paths";
-import { footerNavigation, getContactEmailHref, getPrimaryCtaHref, isPlaceholderValue, siteConfig } from "@data/site";
+import {
+  footerNavigation,
+  getContactEmailHref,
+  getPrimaryCtaHref,
+  isPlaceholderValue,
+  legalNavigation,
+  siteConfig
+} from "@data/site";
+
+const primaryHref = getPrimaryCtaHref();
 ---
 
 <footer class="site-footer">
-  <div class="container site-footer__grid">
-    <div class="stack">
+  <div class="container footer-shell">
+    <div class="footer-brand">
       <a href={withBase("/")} aria-label="Clawsome home">
         <Logo tone="light" />
       </a>
-      <p class="muted">
-        Practical OpenClaw and Claude automations for high-value business workflows.
-      </p>
-      <p class="muted">
-        Start with one quick win. Prove the payoff. Expand from there.
-      </p>
+      <p>Practical OpenClaw and Claude builds for high-value SME workflows.</p>
     </div>
 
-    <div class="stack">
-      <h3>Explore</h3>
-      <ul class="footer-list stack">
-        {footerNavigation.map((item) => (
-          <li><a href={withBase(item.href)}>{item.label}</a></li>
-        ))}
-      </ul>
-    </div>
+    <nav class="footer-nav" aria-label="Footer">
+      {footerNavigation.map((item) => (
+        <a href={withBase(item.href)}>{item.label}</a>
+      ))}
+    </nav>
 
-    <div class="stack">
-      <h3>Contact</h3>
-      <ul class="footer-list stack">
-        <li>
-          <a
-            href={getPrimaryCtaHref()}
-            target={getPrimaryCtaHref().startsWith("http") ? "_blank" : undefined}
-            rel={getPrimaryCtaHref().startsWith("http") ? "noreferrer" : undefined}
-          >
-            Book a quick-win audit
-          </a>
-        </li>
-        {!isPlaceholderValue(siteConfig.email) && (
-          <li><a href={getContactEmailHref()}>{siteConfig.email}</a></li>
-        )}
-        {!isPlaceholderValue(siteConfig.linkedInUrl) && (
-          <li>
-            <a href={siteConfig.linkedInUrl} target="_blank" rel="noreferrer">
-              LinkedIn
-            </a>
-          </li>
-        )}
-      </ul>
-      <p class="muted">
-        {siteConfig.name} • {siteConfig.location}
-      </p>
+    <div class="footer-links">
+      <a
+        href={primaryHref}
+        target={primaryHref.startsWith("http") ? "_blank" : undefined}
+        rel={primaryHref.startsWith("http") ? "noreferrer" : undefined}
+      >
+        Book an audit
+      </a>
+      {!isPlaceholderValue(siteConfig.email) && (
+        <a href={getContactEmailHref()}>{siteConfig.email}</a>
+      )}
+    </div>
+  </div>
+
+  <div class="container footer-meta">
+    <p>{siteConfig.name} • {siteConfig.location}</p>
+    <div class="footer-legal">
+      {legalNavigation.map((item) => (
+        <a href={withBase(item.href)}>{item.label}</a>
+      ))}
     </div>
   </div>
 </footer>

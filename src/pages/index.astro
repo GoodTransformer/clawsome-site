@@ -1,34 +1,27 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
 import ButtonLink from "@components/ButtonLink.astro";
-import CTASection from "@components/CTASection.astro";
 import HeroVisual from "@components/HeroVisual.astro";
-import OfferCard from "@components/OfferCard.astro";
-import ProcessFlow from "@components/ProcessFlow.astro";
-import ProofGallery from "@components/ProofGallery.astro";
-import SectionIntro from "@components/SectionIntro.astro";
-import TrustGrid from "@components/TrustGrid.astro";
-import UseCaseCard from "@components/UseCaseCard.astro";
-import ValueEstimator from "@components/ValueEstimator.astro";
 import { offers } from "@data/offers";
 import { withBase } from "@data/paths";
-import { proofAssets } from "@data/proof";
+import { serviceSchema, organisationSchema, websiteSchema } from "@data/schema";
 import {
+  finalCta,
+  founderBlock,
   getPrimaryCtaHref,
   homeProcessSteps,
-  isPlaceholderValue,
+  proofBlock,
   siteConfig,
   trustPrinciples
 } from "@data/site";
-import { organisationSchema, serviceSchema, websiteSchema } from "@data/schema";
 import { useCases } from "@data/useCases";
 
 const primaryHref = getPrimaryCtaHref();
 ---
 
 <BaseLayout
-  title="Clawsome | Practical AI agent setup for SMEs"
-  description="Agents work now. Clawsome sets up practical OpenClaw and Claude automations for high-value business workflows."
+  title="Clawsome | Practical AI agents for SMEs"
+  description="Agents work now. Clawsome sets up practical OpenClaw and Claude builds for SMEs, starting with one useful quick win."
   pathname="/"
   schema={[
     organisationSchema,
@@ -37,130 +30,195 @@ const primaryHref = getPrimaryCtaHref();
   ]}
 >
   <section class="hero">
-    <div class="hero__inner">
-      <div class="hero__content">
-        <div class="hero__copy" data-reveal>
-          <div class="brand-signal">
-            <img src={withBase("/brand/clawsome-mark-light.svg")} alt="" width="52" height="52" />
-            <div class="brand-name">Clawsome</div>
-          </div>
-          <span class="eyebrow">Practical AI agent setup for SMEs</span>
-          <h1>Agents work now.</h1>
-          <p class="lede">
-            We can set them up for you and start your journey.
-          </p>
-          <p class="hero__note">
-            {siteConfig.shortDescription}
-          </p>
-          <div class="button-row" style="margin-top: 1.75rem;">
-            <ButtonLink
-              href={primaryHref}
-              variant="primary"
-              external={primaryHref.startsWith("http")}
-              track="primary_cta_click"
-              trackLabel="Hero book audit"
-            >
-              Book a quick-win audit
-            </ButtonLink>
-            <ButtonLink
-              href="/example-agents/"
-              variant="secondary"
-              track="secondary_cta_click"
-              trackLabel="Hero example agents"
-            >
-              See example agents
-            </ButtonLink>
-          </div>
-          <p class="badge-note" style="margin-top: 1.4rem;">
-            Secure by design, approval-led where needed, and built for real business workflows.
-          </p>
+    <div class="container hero-shell">
+      <div class="hero-copy">
+        <div class="hero-brand">
+          <img src={withBase("/brand/clawsome-mark-red.svg")} alt="" width="54" height="54" />
+          <span>Clawsome</span>
         </div>
-
-        <div data-reveal>
-          <HeroVisual />
+        <p class="eyebrow">Practical AI agent setup for SMEs</p>
+        <h1>Agents work now.</h1>
+        <p class="hero-subline">We can set them up for you and start your journey.</p>
+        <p class="hero-note">Start with one useful workflow.</p>
+        <div class="button-row hero-actions">
+          <ButtonLink
+            href={primaryHref}
+            variant="primary"
+            external={primaryHref.startsWith("http")}
+            track="primary_cta_click"
+            trackLabel="Home hero book audit"
+          >
+            Book an audit
+          </ButtonLink>
+          <ButtonLink
+            href="/use-cases/"
+            variant="secondary"
+            track="secondary_cta_click"
+            trackLabel="Home hero use cases"
+          >
+            See use cases
+          </ButtonLink>
         </div>
       </div>
+
+      <HeroVisual />
     </div>
   </section>
 
-  <section class="section" data-tone="paper">
-    <div class="container">
-      <SectionIntro
-        eyebrow="Three entry points"
-        title="Three example agents, chosen because buyers get them quickly."
-        text="Clawsome is not asking people to buy an abstract AI future. These are vivid, bounded first wins with a clear commercial story."
-      />
-      <div class="use-case-grid">
-        {useCases.map((item) => (
-          <UseCaseCard item={item} />
+  <section class="section section-light">
+    <div class="container editorial-shell">
+      <div class="section-heading">
+        <p class="eyebrow">Use cases</p>
+        <h2>Three fast ways to start.</h2>
+        <p>These do the explanatory work.</p>
+      </div>
+
+      <div class="case-stack">
+        {useCases.map((item, index) => (
+          <article class="case-row">
+            <div class="case-index">0{index + 1}</div>
+            <div class="case-main">
+              <p class="case-label">{item.name}</p>
+              <h3>{item.headline}</h3>
+              <p class="case-summary">{item.summary}</p>
+              <div class="case-lines">
+                <p><strong>Problem</strong>{item.problem}</p>
+                <p><strong>Outcome</strong>{item.outcome}</p>
+              </div>
+            </div>
+            <div class="case-detail">
+              <ul class="editorial-list">
+                {item.handles.map((detail) => (
+                  <li>{detail}</li>
+                ))}
+              </ul>
+              <div class="case-meta">
+                {item.results.map((result) => (
+                  <span>{result}</span>
+                ))}
+              </div>
+              <ButtonLink href="/use-cases/" variant="ghost">
+                {item.ctaLabel}
+              </ButtonLink>
+            </div>
+          </article>
         ))}
       </div>
     </div>
   </section>
 
-  <section class="section" data-tone="sand">
-    <div class="container">
-      <SectionIntro
-        eyebrow="How it works"
-        title="A clean buying path from drag to proof."
-        text="The delivery model is designed to feel bounded, sensible, and easy to supervise from the first conversation onwards."
-      />
-      <ProcessFlow steps={homeProcessSteps} />
-    </div>
-  </section>
+  <section class="section section-dark">
+    <div class="container editorial-shell">
+      <div class="section-heading">
+        <p class="eyebrow">How it works</p>
+        <h2>Short path. Clear ownership.</h2>
+        <p>Find it. Build it. Train it. Prove it.</p>
+      </div>
 
-  <section class="section" data-tone="ink">
-    <div class="container">
-      <SectionIntro
-        eyebrow="Trust and control"
-        title="Serious deployment discipline, not AI theatre."
-        text="The point is practical automation under control. Sensitive actions stay approval-led where they should, and a nominated operator is trained to supervise the result."
-      />
-      <TrustGrid items={trustPrinciples} />
-    </div>
-  </section>
+      <div class="process-grid">
+        {homeProcessSteps.map((step) => (
+          <article class="process-item">
+            <span class="process-number">{step.index}</span>
+            <h3>{step.title}</h3>
+            <p>{step.detail}</p>
+          </article>
+        ))}
+      </div>
 
-  <section class="section" data-tone="paper">
-    <div class="container">
-      <SectionIntro
-        eyebrow="Offer snapshot"
-        title="A productised offer ladder built around one useful agent first."
-        text="The entry point stays easy to buy, the build stays bounded, and the expansion path only opens after proof."
-      />
-      <div class="offer-list">
-        {offers.slice(0, 4).map((offer) => (
-          <OfferCard offer={offer} />
+      <div class="trust-strip">
+        {trustPrinciples.map((item) => (
+          <article class="trust-item">
+            <h3>{item.title}</h3>
+            <p>{item.detail}</p>
+          </article>
         ))}
       </div>
     </div>
   </section>
 
-  <section class="section" data-tone="sand">
-    <div class="container">
-      <SectionIntro
-        eyebrow="Value sketch"
-        title="A rough way to frame the first win."
-        text="Use a few live numbers to see whether the drag is big enough to justify a bounded build. It is an estimate, not a promise."
-      />
-      <ValueEstimator />
+  <section class="section section-light">
+    <div class="container editorial-shell">
+      <div class="section-heading">
+        <p class="eyebrow">Offers</p>
+        <h2>Productised, not bloated.</h2>
+        <p>Quick to understand. Clear to buy.</p>
+      </div>
+
+      <div class="offer-table">
+        {offers.map((offer) => (
+          <article class="offer-row">
+            <div class="offer-main">
+              <p class="offer-kicker">{offer.emphasis}</p>
+              <h3>{offer.name}</h3>
+              <p>{offer.summary}</p>
+              <ul class="editorial-list">
+                {offer.bullets.map((bullet) => (
+                  <li>{bullet}</li>
+                ))}
+              </ul>
+            </div>
+            <div class="offer-side">
+              <div class="offer-price">{offer.price}</div>
+            </div>
+          </article>
+        ))}
+      </div>
     </div>
   </section>
 
-  <section class="section" data-tone="paper">
-    <div class="container">
-      <SectionIntro
-        eyebrow="Proof"
-        title="Designed to hold real proof as it arrives."
-        text="No fabricated case studies. The structure below is ready for live demos, before-and-after workflow snapshots, and short operational evidence blocks."
-      />
-      <ProofGallery items={proofAssets} />
-      {isPlaceholderValue(siteConfig.bookingUrl) && (
-        <p class="muted" style="margin-top: 1.5rem;">
-          Booking and proof assets are wired for easy replacement once the live links and demos are ready.
-        </p>
-      )}
+  <section class="section section-tint">
+    <div class="container proof-shell">
+      <div class="proof-copy">
+        <p class="eyebrow">Proof</p>
+        <h2>{proofBlock.title}</h2>
+        <p>{proofBlock.text}</p>
+      </div>
+      <div class="proof-diagram" aria-hidden="true">
+        <div>Workflow</div>
+        <span></span>
+        <div>Agent</div>
+        <span></span>
+        <div>Approval</div>
+        <span></span>
+        <div>Action</div>
+      </div>
     </div>
   </section>
 
-  <CTASection secondaryHref="/contact/" />
+  <section class="section section-light">
+    <div class="container compact-brand-block">
+      <div>
+        <p class="eyebrow">Clawsome</p>
+        <h2>{founderBlock.title}</h2>
+      </div>
+      <div>
+        <p>{founderBlock.text}</p>
+        <p class="brand-credit">{siteConfig.credibilityNote}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-cta">
+    <div class="container cta-shell">
+      <div>
+        <p class="eyebrow">Next step</p>
+        <h2>{finalCta.title}</h2>
+        <p>{finalCta.text}</p>
+      </div>
+      <div class="button-row">
+        <ButtonLink
+          href={primaryHref}
+          variant="primary"
+          external={primaryHref.startsWith("http")}
+          track="primary_cta_click"
+          trackLabel="Home final book audit"
+        >
+          {finalCta.primaryLabel}
+        </ButtonLink>
+        <ButtonLink href="/contact/" variant="secondary">
+          {finalCta.secondaryLabel}
+        </ButtonLink>
+      </div>
+    </div>
+  </section>
 </BaseLayout>

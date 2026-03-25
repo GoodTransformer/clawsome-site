@@ -5,6 +5,10 @@ type ContactResponse = {
   message: string;
 };
 
+function isPlaceholderEmail(email: string) {
+  return email.includes("replace-me") || email.endsWith(".example");
+}
+
 function buildMailtoUrl(formData: FormData, email: string) {
   const subject = encodeURIComponent("Clawsome quick-win audit request");
   const lines = [
@@ -63,7 +67,7 @@ export function initContactForm() {
     try {
       if (endpoint) {
         await submitToEndpoint(endpoint, formData);
-      } else if (fallbackEmail) {
+      } else if (fallbackEmail && !isPlaceholderEmail(fallbackEmail)) {
         window.location.href = buildMailtoUrl(formData, fallbackEmail);
       } else {
         throw new Error("No form endpoint configured");
@@ -77,7 +81,7 @@ export function initContactForm() {
     } catch (error) {
       if (status) {
         status.textContent =
-          "The form could not be sent. Use the booking link or email route while the endpoint is being connected.";
+          "The contact route is being finalised. Add a live email or form endpoint to enable submissions here.";
         status.dataset.state = "error";
       }
       submit?.removeAttribute("disabled");

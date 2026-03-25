@@ -1,24 +1,27 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
-import PageHero from "@components/PageHero.astro";
 import { privacySections } from "@data/legal";
 ---
 
 <BaseLayout
   title="Privacy Policy | Clawsome"
-  description="Editable privacy policy template for the Clawsome website and enquiry flow."
+  description="Privacy policy template for the Clawsome website and enquiry flow."
   pathname="/privacy-policy/"
 >
-  <PageHero
-    eyebrow="Privacy policy"
-    title="A clear, editable privacy base for launch."
-    text="This page is intentionally concise. It covers the website enquiry flow and should be finalised with legal review before launch."
-  />
+  <section class="page-hero">
+    <div class="container page-hero__shell">
+      <div>
+        <p class="eyebrow">Privacy</p>
+        <h1>Privacy policy.</h1>
+        <p class="page-intro">Short, editable, and ready for final legal review.</p>
+      </div>
+    </div>
+  </section>
 
-  <section class="section" data-tone="paper">
-    <div class="container stack">
+  <section class="section section-light">
+    <div class="container legal-shell">
       {privacySections.map((section) => (
-        <article class="legal-panel rich-text" data-reveal>
+        <article class="legal-block">
           <h2>{section.heading}</h2>
           {section.body.map((paragraph) => (
             <p>{paragraph}</p>

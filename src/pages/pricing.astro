@@ -1,71 +1,118 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
 import ButtonLink from "@components/ButtonLink.astro";
-import CTASection from "@components/CTASection.astro";
-import OfferCard from "@components/OfferCard.astro";
-import PageHero from "@components/PageHero.astro";
-import { offers } from "@data/offers";
+import FAQAccordion from "@components/FAQAccordion.astro";
+import { faqs } from "@data/faqs";
+import { managedOperationsNote, offers } from "@data/offers";
 import { serviceSchema } from "@data/schema";
+import { getPrimaryCtaHref } from "@data/site";
+
+const primaryHref = getPrimaryCtaHref();
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer
+    }
+  }))
+};
 ---
 
 <BaseLayout
-  title="Pricing and Offers | Clawsome"
-  description="Indicative pricing for Clawsome's Agent Opportunity Audit, Quick-Win Agent Sprint, care plans, expansion builds, and managed operations."
+  title="Pricing | Clawsome"
+  description="Clear price bands for the audit, quick-win sprint, care plan, and expansion work."
   pathname="/pricing/"
-  schema={serviceSchema(
-    "Pricing for AI agent setup services",
-    "The Clawsome offer ladder and indicative pricing for audits, quick-win builds, care plans, expansion work, and managed operations.",
-    "/pricing/"
-  )}
+  schema={[
+    serviceSchema(
+      "Pricing for Clawsome quick-win agent services",
+      "Clear, premium pricing for Clawsome audits, quick-win builds, care plans, and expansion work.",
+      "/pricing/"
+    ),
+    faqSchema
+  ]}
 >
-  <PageHero
-    eyebrow="Pricing and offers"
-    title="Clear price bands. Serious commercial framing."
-    text="The pricing ladder is there to make the buying path easy to understand. It should feel premium, bounded, and commercially legible rather than bargain-led."
-    bullets={[
-      "Paid audit to qualify the first workflow",
-      "Fixed-fee quick-win build",
-      "Expansion only after proof"
-    ]}
-  />
+  <section class="page-hero">
+    <div class="container page-hero__shell">
+      <div>
+        <p class="eyebrow">Pricing</p>
+        <h1>Clear price bands. Clean scope.</h1>
+        <p class="page-intro">
+          The first step should feel easy to buy and serious enough to trust.
+        </p>
+      </div>
+      <div class="page-note">
+        <p>Audit first. Quick win next. Care or expansion after proof.</p>
+      </div>
+    </div>
+  </section>
 
-  <section class="section" data-tone="paper">
-    <div class="container offer-list">
+  <section class="section section-light">
+    <div class="container offer-table">
       {offers.map((offer) => (
-        <OfferCard offer={offer} />
+        <article class="offer-row">
+          <div class="offer-main">
+            <p class="offer-kicker">{offer.emphasis}</p>
+            <h2>{offer.name}</h2>
+            <p>{offer.summary}</p>
+            <ul class="editorial-list">
+              {offer.bullets.map((bullet) => (
+                <li>{bullet}</li>
+              ))}
+            </ul>
+          </div>
+          <div class="offer-side">
+            <div class="offer-price">{offer.price}</div>
+            <ButtonLink href="/contact/" variant="ghost">
+              {offer.ctaLabel}
+            </ButtonLink>
+          </div>
+        </article>
       ))}
     </div>
   </section>
 
-  <section class="section" data-tone="sand">
-    <div class="container split-grid">
-      <article class="about-panel rich-text" data-reveal>
-        <span class="eyebrow">Commercial logic</span>
-        <h2>Why the ladder works.</h2>
-        <p>
-          A small paid diagnostic creates commitment without turning the first step into a heavy procurement process. The quick-win sprint then gives the business one useful agent live, with clear value and clear ownership.
-        </p>
-        <p>
-          Care plans, expansion builds, and managed operations come later, when the workflow has already earned trust.
-        </p>
-      </article>
-      <article class="about-panel rich-text" data-reveal>
-        <span class="eyebrow">What affects price</span>
-        <h2>Scope stays bounded on purpose.</h2>
-        <ul class="list">
-          <li>How many systems need to be connected</li>
-          <li>How much routing, drafting, or approval logic is involved</li>
-          <li>Whether the workflow needs live testing in a sensitive environment</li>
-          <li>How much operator training and documentation is required</li>
-        </ul>
-        <div class="button-row" style="margin-top: 1.5rem;">
-          <ButtonLink href="/contact/" variant="primary" track="primary_cta_click" trackLabel="Pricing page book audit">
-            Book a quick-win audit
-          </ButtonLink>
-        </div>
-      </article>
+  <section class="section section-tint">
+    <div class="container compact-brand-block">
+      <div>
+        <p class="eyebrow">Later stage</p>
+        <h2>{managedOperationsNote.title}</h2>
+      </div>
+      <div>
+        <p>{managedOperationsNote.text}</p>
+      </div>
     </div>
   </section>
 
-  <CTASection />
+  <section class="section section-light">
+    <div class="container editorial-shell">
+      <div class="section-heading">
+        <p class="eyebrow">FAQ</p>
+        <h2>Short answers to the obvious questions.</h2>
+      </div>
+      <FAQAccordion items={faqs} />
+    </div>
+  </section>
+
+  <section class="section section-cta">
+    <div class="container cta-shell">
+      <div>
+        <p class="eyebrow">Next step</p>
+        <h2>Bring the workflow, not a theory deck.</h2>
+        <p>We will tell you if it is a good first agent.</p>
+      </div>
+      <div class="button-row">
+        <ButtonLink href={primaryHref} variant="primary" external={primaryHref.startsWith("http")}>
+          Book an audit
+        </ButtonLink>
+        <ButtonLink href="/contact/" variant="secondary">
+          Contact Clawsome
+        </ButtonLink>
+      </div>
+    </div>
+  </section>
 </BaseLayout>

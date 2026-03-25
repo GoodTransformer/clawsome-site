@@ -3,12 +3,14 @@ import Logo from "./Logo.astro";
 import ButtonLink from "./ButtonLink.astro";
 import { withBase } from "@data/paths";
 import { getPrimaryCtaHref, primaryNavigation } from "@data/site";
+
+const primaryHref = getPrimaryCtaHref();
 ---
 
 <header class="site-header" data-site-header data-scrolled="false">
   <div class="site-header__inner">
-    <a href={withBase("/")} aria-label="Clawsome home">
-      <Logo tone="light" />
+    <a href={withBase("/")} aria-label="Clawsome home" class="site-brand">
+      <Logo tone="dark" />
     </a>
 
     <nav class="site-nav" aria-label="Primary">
@@ -19,21 +21,14 @@ import { getPrimaryCtaHref, primaryNavigation } from "@data/site";
 
     <div class="nav-actions">
       <ButtonLink
-        href="/example-agents/"
-        variant="secondary"
-        track="secondary_cta_click"
-        trackLabel="Header example agents"
-      >
-        See example agents
-      </ButtonLink>
-      <ButtonLink
-        href={getPrimaryCtaHref()}
+        href={primaryHref}
         variant="primary"
-        external={getPrimaryCtaHref().startsWith("http")}
+        external={primaryHref.startsWith("http")}
         track="primary_cta_click"
         trackLabel="Header book audit"
+        className="header-cta"
       >
-        Book a quick-win audit
+        Book an audit
       </ButtonLink>
       <button
         class="menu-toggle"
@@ -43,11 +38,8 @@ import { getPrimaryCtaHref, primaryNavigation } from "@data/site";
         data-menu-toggle
       >
         <span class="sr-only">Open navigation</span>
-        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none">
-          <path d="M4 7H20" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
-          <path d="M4 12H20" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
-          <path d="M4 17H20" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
-        </svg>
+        <span></span>
+        <span></span>
       </button>
     </div>
   </div>
@@ -58,13 +50,13 @@ import { getPrimaryCtaHref, primaryNavigation } from "@data/site";
         <a href={withBase(item.href)}>{item.label}</a>
       ))}
       <ButtonLink
-        href={getPrimaryCtaHref()}
+        href={primaryHref}
         variant="primary"
-        external={getPrimaryCtaHref().startsWith("http")}
+        external={primaryHref.startsWith("http")}
         track="primary_cta_click"
         trackLabel="Mobile book audit"
       >
-        Book a quick-win audit
+        Book an audit
       </ButtonLink>
     </nav>
   </div>

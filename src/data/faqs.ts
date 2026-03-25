@@ -2,63 +2,43 @@ import type { FaqItem } from "./types";
 
 export const faqs: FaqItem[] = [
   {
-    question: "What kinds of workflows suit a quick-win agent?",
+    question: "What makes a good first agent?",
     answer:
-      "The best fits are repetitive workflows with clear next steps, visible business value, and a reasonable way to keep sensitive decisions approval-led. Lead response, campaign production, invoice chasing, request routing, document triage, and routine coordination are all strong candidates."
+      "A repetitive workflow with clear steps, clear value, and a sensible place for human approval."
   },
   {
-    question: "How fast can this be set up?",
+    question: "How fast can this go live?",
     answer:
-      "The aim is to get one bounded workflow live quickly, not spend months in discovery. Timing depends on the systems involved and the approval logic needed, but the front-door offer is designed to move in weeks rather than dragging into a long programme."
+      "The point is weeks, not months. Timing depends on the workflow and the systems involved."
   },
   {
-    question: "Do I need technical staff on my side?",
+    question: "Do we need technical staff?",
     answer:
-      "Not necessarily. You do need somebody who understands the workflow, can help confirm the rules, and can act as the nominated operator after handover. Clawsome handles the setup work and trains that person to supervise the result."
+      "No. You do need a nominated operator who understands the workflow and can own it after handover."
   },
   {
-    question: "What does my team need to do during the build?",
+    question: "Who runs it after launch?",
     answer:
-      "Usually the team helps clarify the workflow, confirms the right boundaries, gives access to the agreed tools, tests real examples, and nominates the operator who will run the process after handover."
+      "A person on your side does. Training and handover are part of the build."
   },
   {
-    question: "Who operates the agent after handover?",
+    question: "What if the workflow is sensitive?",
     answer:
-      "A nominated operator on your side does. That is an explicit part of the delivery model. They are trained on what the agent does, what stays human, how to supervise it, and how to intervene when something needs judgement."
+      "Then it stays approval-led where needed. The build is controlled, not reckless."
   },
   {
-    question: "What if the workflow touches sensitive actions?",
+    question: "Why start with one agent?",
     answer:
-      "Then the workflow stays approval-led where it needs to. Financial, legal, or sensitive steps do not have to be handed over blindly. The point is controlled automation under supervision, not reckless autonomy."
+      "Because one useful workflow is easier to buy, easier to govern, and easier to prove."
   },
   {
-    question: "Do you replace staff?",
+    question: "What does OpenClaw do here?",
     answer:
-      "No. The practical aim is to remove repetitive work, speed response, reduce drag, and let people focus on the parts that still need judgement, service, and ownership."
+      "OpenClaw is the action layer. It handles the workflow steps, tools, and routing."
   },
   {
-    question: "Why start with one agent instead of a larger programme?",
+    question: "Why Claude?",
     answer:
-      "Because one useful agent is easier to understand, easier to buy, easier to govern, and easier to prove. Once there is trust and evidence, the second and third builds become much more straightforward."
-  },
-  {
-    question: "What software can this connect to?",
-    answer:
-      "That depends on the workflow and the tools already in use. The right build usually connects to the systems that already hold the work, the messages, or the hand-off. The audit is where we confirm the sensible route."
-  },
-  {
-    question: "What does OpenClaw actually do here?",
-    answer:
-      "OpenClaw is the action layer. It helps the workflow interact with tools, routes, approvals, and operational steps in a way that is useful in the real business process."
-  },
-  {
-    question: "Why use Claude in the stack?",
-    answer:
-      "Claude supports the reasoning, drafting, and decision-support part of the workflow. It is not the product being sold. It is part of the stack that helps the agent behave well inside a real business task."
-  },
-  {
-    question: "What happens after the first build?",
-    answer:
-      "You can keep the agent running with internal ownership, add a care plan, or plan the next build. The expansion path follows proof rather than pushing you into a bigger programme before the first workflow has earned it."
+      "Claude supports the reasoning, drafting, and decision support inside the workflow."
   }
 ];

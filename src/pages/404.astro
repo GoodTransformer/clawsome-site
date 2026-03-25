@@ -10,17 +10,15 @@ import ButtonLink from "@components/ButtonLink.astro";
   noindex={true}
 >
   <section class="page-hero">
-    <div class="container page-hero__content">
-      <div data-reveal>
-        <span class="eyebrow">404</span>
-        <h1>That route has slipped the workflow.</h1>
-        <p class="lede muted">
-          The page you were looking for is not here. The best next move is to go back to the homepage or straight to the example agents.
-        </p>
-        <div class="button-row" style="margin-top: 1.75rem;">
-          <ButtonLink href="/" variant="primary">Back to home</ButtonLink>
-          <ButtonLink href="/example-agents/" variant="secondary">See example agents</ButtonLink>
-        </div>
+    <div class="container page-hero__shell">
+      <div>
+        <p class="eyebrow">404</p>
+        <h1>That page is gone.</h1>
+        <p class="page-intro">Go back to the homepage or straight to the use cases.</p>
+      </div>
+      <div class="button-row">
+        <ButtonLink href="/" variant="primary">Home</ButtonLink>
+        <ButtonLink href="/use-cases/" variant="secondary">Use cases</ButtonLink>
       </div>
     </div>
   </section>

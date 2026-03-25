@@ -1,44 +1,49 @@
 # Clawsome Brand Guide
 
-## Brand intent
+## Brand character
 
-Clawsome should feel sharp, modern, premium, and commercially legible. The name has a slight playfulness, so the system counters that with restraint, tonal seriousness, and clear language.
+Clawsome should feel sharp, editorial, premium, and commercially legible. The name has edge. The design system keeps it controlled rather than playful.
 
-## Core message hierarchy
+## Message hierarchy
 
-- Primary line: `Agents work now.`
-- Secondary line: `We can set them up for you and start your journey.`
-- Operational line: `Start with one quick win. Prove the payoff. Expand from there.`
-- Trust line: `Secure by design, approval-led where needed, and built for real business workflows.`
+- Primary: `Agents work now.`
+- Secondary: `We can set them up for you and start your journey.`
+- Operational: `Start with one useful workflow.`
+- Trust: `Approval-led where needed. Trained operator after handover.`
 
-## Visual system
+## Palette
 
-- Foundation: graphite, ink, mineral, and warm paper neutrals
-- Accent: restrained sea-glass green for signal, motion, and emphasis
-- Avoid rainbow UI, purple gradients, or cartoon mascot treatment
+- Graphite / near-black
+- Warm paper / stone
+- Signal red as the primary identity colour
+
+Avoid extra colour unless there is a strong reason.
 
 ## Typography
 
-- Display: Fraunces Variable
+- Display: Newsreader Variable
 - Body: Manrope Variable
-- Display usage should stay clipped and deliberate
-- Body copy should remain concise and commercially readable
+
+The combination should feel editorial rather than SaaS-generic.
 
 ## Logo system
 
-- The icon is an abstract claw or aperture mark built from opposing directional forms
-- Use the full logo lockups in `public/brand` for general brand presentation
-- Use the mark on its own for favicon, social icon, and small-scale moments
+- The mark is an abstract pincer or aperture with a central slit
+- Red carries the primary identity weight
+- Use the lockups in `public/brand` for full brand moments
+- Use the standalone mark for favicon, social icon, and small-scale placements
 
 ## Motion
 
-- Motion should create presence and hierarchy
-- Current system uses hero sweep, ambient pulse, and reveal transitions
-- Keep motion subtle and respect reduced-motion preferences
+- Keep it restrained
+- No reveal choreography
+- No floating ambient motion
+- Hover and sticky-header polish only
 
 ## Copy rules
 
 - Use UK English
-- Avoid hype, AI theatre, and lab vocabulary
-- Prefer direct commercial language: save time, recover revenue, reduce drag, speed response
-- Do not frame quick wins as a smaller version of the real strategy. Quick wins are the strategy
+- Keep it short
+- Cut repetition hard
+- Prefer commercially legible language over explanation
+- Quick wins are the core offer, not a stepping stone to the real thing

@@ -1,0 +1,104 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import ButtonLink from "@components/ButtonLink.astro";
+import { serviceSchema } from "@data/schema";
+import { getPrimaryCtaHref } from "@data/site";
+import { useCases } from "@data/useCases";
+
+const primaryHref = getPrimaryCtaHref();
+---
+
+<BaseLayout
+  title="Use Cases | Clawsome"
+  description="Three clear quick-win use cases for SMEs: Meta Ads, Lead Response, and Admin Recovery."
+  pathname="/use-cases/"
+  schema={serviceSchema(
+    "Quick-win AI agent use cases",
+    "Three fast, commercially legible ways for SMEs to start with Clawsome.",
+    "/use-cases/"
+  )}
+>
+  <section class="page-hero">
+    <div class="container page-hero__shell">
+      <div>
+        <p class="eyebrow">Use cases</p>
+        <h1>Three clear ways to start.</h1>
+        <p class="page-intro">
+          Pick the workflow with the cleanest value signal. Keep it bounded. Train the operator. Expand later.
+        </p>
+      </div>
+      <div class="page-note">
+        <p>Meta Ads. Lead Response. Admin Recovery.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-light">
+    <div class="container use-case-page">
+      {useCases.map((item, index) => (
+        <article class="use-case-feature">
+          <div class="use-case-feature__lead">
+            <p class="case-index">0{index + 1}</p>
+            <p class="case-label">{item.name}</p>
+            <h2>{item.headline}</h2>
+            <p class="case-summary">{item.summary}</p>
+            <p class="case-line"><strong>Problem</strong>{item.problem}</p>
+            <p class="case-line"><strong>Outcome</strong>{item.outcome}</p>
+          </div>
+
+          <div class="use-case-feature__meta">
+            <div>
+              <p class="mini-heading">Agent handles</p>
+              <ul class="editorial-list">
+                {item.handles.map((detail) => (
+                  <li>{detail}</li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <p class="mini-heading">Human keeps</p>
+              <ul class="editorial-list">
+                {item.human.map((detail) => (
+                  <li>{detail}</li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <p class="mini-heading">Commercial outcomes</p>
+              <ul class="editorial-list">
+                {item.results.map((detail) => (
+                  <li>{detail}</li>
+                ))}
+              </ul>
+              <p class="fit-line">{item.suits}</p>
+            </div>
+          </div>
+
+          <div class="use-case-feature__cta">
+            <ButtonLink href="/contact/" variant="primary">
+              {item.ctaLabel}
+            </ButtonLink>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="section section-cta">
+    <div class="container cta-shell">
+      <div>
+        <p class="eyebrow">Start here</p>
+        <h2>Choose the workflow with the clearest value.</h2>
+        <p>That is usually the right first agent.</p>
+      </div>
+      <div class="button-row">
+        <ButtonLink href={primaryHref} variant="primary" external={primaryHref.startsWith("http")}>
+          Book an audit
+        </ButtonLink>
+        <ButtonLink href="/pricing/" variant="secondary">
+          See pricing
+        </ButtonLink>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

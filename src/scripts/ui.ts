@@ -1,14 +1,12 @@
 export function initGlobalUi() {
   const root = document.documentElement;
-  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
   const header = document.querySelector<HTMLElement>("[data-site-header]");
   const menuButton = document.querySelector<HTMLButtonElement>("[data-menu-toggle]");
   const nav = document.querySelector<HTMLElement>("[data-mobile-nav]");
 
   const setHeaderState = () => {
     if (!header) return;
-    header.dataset.scrolled = window.scrollY > 24 ? "true" : "false";
+    header.dataset.scrolled = window.scrollY > 12 ? "true" : "false";
   };
 
   setHeaderState();
@@ -28,31 +26,4 @@ export function initGlobalUi() {
       root.classList.remove("menu-open");
     })
   );
-
-  if (reduceMotion) {
-    document.querySelectorAll<HTMLElement>("[data-reveal]").forEach((item) => {
-      item.dataset.revealState = "visible";
-    });
-    return;
-  }
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          (entry.target as HTMLElement).dataset.revealState = "visible";
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    {
-      threshold: 0.16,
-      rootMargin: "0px 0px -8% 0px"
-    }
-  );
-
-  document.querySelectorAll<HTMLElement>("[data-reveal]").forEach((item) => {
-    item.dataset.revealState = "hidden";
-    observer.observe(item);
-  });
 }

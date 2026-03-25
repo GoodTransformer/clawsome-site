@@ -1,24 +1,27 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
-import PageHero from "@components/PageHero.astro";
 import { termsSections } from "@data/legal";
 ---
 
 <BaseLayout
   title="Terms | Clawsome"
-  description="Editable website terms for the Clawsome marketing site."
+  description="Simple website terms for the Clawsome marketing site."
   pathname="/terms/"
 >
-  <PageHero
-    eyebrow="Terms"
-    title="Simple website terms, ready for legal review."
-    text="These terms cover the public site. Project delivery, support, pricing, and operational responsibilities should sit in separate engagement documents."
-  />
+  <section class="page-hero">
+    <div class="container page-hero__shell">
+      <div>
+        <p class="eyebrow">Terms</p>
+        <h1>Website terms.</h1>
+        <p class="page-intro">Simple public-site terms, separate from project agreements.</p>
+      </div>
+    </div>
+  </section>
 
-  <section class="section" data-tone="paper">
-    <div class="container stack">
+  <section class="section section-light">
+    <div class="container legal-shell">
       {termsSections.map((section) => (
-        <article class="legal-panel rich-text" data-reveal>
+        <article class="legal-block">
           <h2>{section.heading}</h2>
           {section.body.map((paragraph) => (
             <p>{paragraph}</p>
