@@ -400,13 +400,11 @@ p {
   transform-origin: 92px 116px;
 }
 
-.hero-visual:hover .brand-mark__upper,
 .hero-mark-wrap:hover .brand-mark__upper,
 .site-brand:hover .brand-mark__upper {
   transform: rotate(3.5deg) translateX(1px) translateY(1px);
 }
 
-.hero-visual:hover .brand-mark__lower,
 .hero-mark-wrap:hover .brand-mark__lower,
 .site-brand:hover .brand-mark__lower {
   transform: rotate(-3.5deg) translateX(1px) translateY(-1px);
@@ -503,61 +501,41 @@ p {
   position: absolute;
   inset: 14% 8% 16% 18%;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(178, 38, 36, 0.22) 0%, rgba(178, 38, 36, 0.08) 42%, transparent 74%);
-  filter: blur(6px);
-  opacity: 0.72;
+  background: radial-gradient(circle, rgba(178, 38, 36, 0.2) 0%, rgba(178, 38, 36, 0.08) 38%, transparent 74%);
+  filter: blur(12px);
+  opacity: 0.66;
 }
 
 .hero-brand-plane {
   position: absolute;
-  inset: 5% 2% 4% 10%;
+  inset: 6% 4% 6% 12%;
+  background:
+    radial-gradient(circle at 41% 52%, rgba(178, 38, 36, 0.16) 0%, rgba(178, 38, 36, 0.06) 32%, transparent 68%),
+    radial-gradient(circle at 52% 48%, rgba(247, 242, 235, 0.035) 0%, transparent 74%);
+  pointer-events: none;
 }
 
-.hero-brand-plane__arc {
-  position: absolute;
-  inset: 4% 10% 8% 1%;
-  border: 1px solid rgba(247, 242, 235, 0.05);
-  border-right-color: transparent;
-  border-radius: 50%;
-  opacity: 0.72;
-}
-
-.hero-brand-plane__arc::before,
-.hero-brand-plane__arc::after {
+.hero-brand-plane::before,
+.hero-brand-plane::after {
   content: "";
   position: absolute;
-  border: 1px solid rgba(247, 242, 235, 0.035);
-  border-right-color: transparent;
   border-radius: 50%;
 }
 
-.hero-brand-plane__arc::before {
-  inset: 8% 9% 8% 10%;
-}
-
-.hero-brand-plane__arc::after {
-  inset: 18% 18% 18% 19%;
-  border-color: rgba(178, 38, 36, 0.1);
+.hero-brand-plane::before {
+  inset: 4% 11% 10% 1%;
+  border: 1px solid rgba(247, 242, 235, 0.045);
   border-right-color: transparent;
+  transform: rotate(-8deg);
+  opacity: 0.54;
 }
 
-.hero-brand-plane__jaw {
-  position: absolute;
-  right: 8%;
-  width: 28%;
-  aspect-ratio: 1 / 0.82;
-  background: linear-gradient(135deg, rgba(247, 242, 235, 0.08), rgba(247, 242, 235, 0.02));
-  clip-path: polygon(0 22%, 56% 0, 100% 18%, 98% 76%, 70% 100%, 35% 76%, 18% 58%);
-  opacity: 0.48;
-}
-
-.hero-brand-plane__jaw--top {
-  top: 9%;
-}
-
-.hero-brand-plane__jaw--bottom {
-  bottom: 10%;
-  transform: rotate(180deg);
+.hero-brand-plane::after {
+  inset: 16% 22% 18% 14%;
+  border: 1px solid rgba(178, 38, 36, 0.11);
+  border-right-color: transparent;
+  transform: rotate(-10deg);
+  opacity: 0.6;
 }
 
 .hero-mark-wrap {
@@ -1107,12 +1085,7 @@ p {
   }
 
   .hero-brand-plane {
-    inset: 0 0 0 18%;
-  }
-
-  .hero-brand-plane__jaw {
-    right: 10%;
-    width: 24%;
+    inset: 2% 2% 2% 18%;
   }
 
   .hero-mark-wrap {
@@ -1203,12 +1176,7 @@ p {
   }
 
   .hero-brand-plane {
-    inset: 0 0 0 20%;
-  }
-
-  .hero-brand-plane__jaw {
-    width: 27%;
-    right: 8%;
+    inset: 2% 2% 2% 21%;
   }
 
   .hero-mark-wrap {

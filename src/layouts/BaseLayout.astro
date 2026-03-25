@@ -39,8 +39,9 @@ const schemaList = Array.isArray(schema) ? schema : schema ? [schema] : [];
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
-    <link rel="icon" href={withBase("/favicons/favicon.svg")} type="image/svg+xml" />
+    <link rel="icon" href={withBase("/favicons/favicon.svg")} type="image/svg+xml" sizes="any" />
     <link rel="icon" href={withBase("/favicons/favicon-32x32.png")} sizes="32x32" type="image/png" />
+    <link rel="shortcut icon" href={withBase("/favicons/favicon-32x32.png")} type="image/png" />
     <link rel="apple-touch-icon" href={withBase("/favicons/apple-touch-icon.png")} />
     <link rel="manifest" href={withBase("/site.webmanifest")} />
     <meta name="theme-color" content="#120f10" />
