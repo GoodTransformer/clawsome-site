@@ -317,10 +317,6 @@ p {
   gap: 0.75rem;
 }
 
-.header-cta {
-  min-width: 9.4rem;
-}
-
 .menu-toggle {
   display: none;
   width: 2.95rem;
@@ -1003,16 +999,10 @@ p {
     gap: 1rem;
     font-size: 0.9rem;
   }
-
-  .header-cta {
-    min-width: 8.5rem;
-    padding-inline: 1rem;
-  }
 }
 
 @media (max-width: 720px) {
-  .site-nav,
-  .header-cta {
+  .site-nav {
     display: none;
   }
 

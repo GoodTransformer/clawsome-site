@@ -1,10 +1,8 @@
 ---
 import Logo from "./Logo.astro";
-import ButtonLink from "./ButtonLink.astro";
 import { withBase } from "@data/paths";
-import { getPrimaryCtaHref, primaryNavigation } from "@data/site";
+import { primaryNavigation } from "@data/site";
 
-const primaryHref = getPrimaryCtaHref();
 const normalizePath = (value: string) => (value !== "/" ? value.replace(/\/$/, "") : value);
 const isHome = normalizePath(Astro.url.pathname) === normalizePath(withBase("/"));
 ---
@@ -22,16 +20,6 @@ const isHome = normalizePath(Astro.url.pathname) === normalizePath(withBase("/")
     </nav>
 
     <div class="nav-actions">
-      <ButtonLink
-        href={primaryHref}
-        variant="primary"
-        external={primaryHref.startsWith("http")}
-        track="primary_cta_click"
-        trackLabel="Header book audit"
-        className="header-cta"
-      >
-        Book an audit
-      </ButtonLink>
       <button
         class="menu-toggle"
         type="button"
@@ -51,15 +39,6 @@ const isHome = normalizePath(Astro.url.pathname) === normalizePath(withBase("/")
       {primaryNavigation.map((item) => (
         <a href={withBase(item.href)}>{item.label}</a>
       ))}
-      <ButtonLink
-        href={primaryHref}
-        variant="primary"
-        external={primaryHref.startsWith("http")}
-        track="primary_cta_click"
-        trackLabel="Mobile book audit"
-      >
-        Book an audit
-      </ButtonLink>
     </nav>
   </div>
 </header>
