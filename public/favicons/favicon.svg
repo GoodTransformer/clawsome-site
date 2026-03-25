@@ -1,17 +1,17 @@
 <svg width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="160" height="160" rx="36" fill="#FCF9F4" />
-  <g transform="translate(18 14) scale(0.76)">
+  <rect width="160" height="160" rx="36" fill="#B22624" />
+  <g transform="translate(20 21) scale(0.735)">
     <path
       d="M94 30C82 22 68 18 55 18C27 18 12 42 12 80C12 118 27 142 55 142C68 142 82 138 94 130"
-      stroke="#B22624"
+      stroke="#F7F2EB"
       stroke-width="28"
       stroke-linecap="butt"
       stroke-linejoin="miter"
       fill="none"
     />
-    <path d="M87 31L120 6L148 24L151 57L143 74L129 50L107 42L92 57L73 41Z" fill="#B22624" />
-    <path d="M102 48L126 65L110 78L88 64Z" fill="#B22624" />
-    <path d="M87 129L120 154L148 136L151 103L143 86L129 110L107 118L92 103L73 119Z" fill="#B22624" />
-    <path d="M102 112L126 95L110 82L88 96Z" fill="#B22624" />
+    <path d="M87 31L120 6L148 24L151 57L143 74L129 50L107 42L92 57L73 41Z" fill="#F7F2EB" />
+    <path d="M102 48L126 65L110 78L88 64Z" fill="#F7F2EB" />
+    <path d="M87 129L120 154L148 136L151 103L143 86L129 110L107 118L92 103L73 119Z" fill="#F7F2EB" />
+    <path d="M102 112L126 95L110 82L88 96Z" fill="#F7F2EB" />
   </g>
 </svg>
