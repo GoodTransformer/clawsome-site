@@ -1,4 +1,4 @@
-import { absoluteUrl, withBase } from "./paths";
+import { absoluteUrl } from "./paths";
 import type { NavItem, ProcessStep } from "./types";
 
 const placeholderEmail = "hello@replace-me.example";
@@ -30,9 +30,7 @@ export function isPlaceholderValue(value: string) {
 }
 
 export function getPrimaryCtaHref() {
-  return isPlaceholderValue(siteConfig.bookingUrl)
-    ? withBase("/contact/")
-    : siteConfig.bookingUrl;
+  return isPlaceholderValue(siteConfig.bookingUrl) ? "/contact/" : siteConfig.bookingUrl;
 }
 
 export function getContactEmailHref() {
