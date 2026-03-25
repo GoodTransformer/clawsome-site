@@ -1,0 +1,34 @@
+---
+import { withBase } from "@data/paths";
+
+interface Props {
+  href: string;
+  variant?: "primary" | "secondary" | "ghost" | "subtle";
+  external?: boolean;
+  track?: string;
+  trackLabel?: string;
+  className?: string;
+}
+
+const {
+  href,
+  variant = "primary",
+  external = false,
+  track,
+  trackLabel,
+  className = ""
+} = Astro.props;
+
+const resolvedHref = withBase(href);
+---
+
+<a
+  class={`button ${variant} ${className}`.trim()}
+  href={resolvedHref}
+  target={external ? "_blank" : undefined}
+  rel={external ? "noreferrer" : undefined}
+  data-track={track}
+  data-track-label={trackLabel}
+>
+  <slot />
+</a>

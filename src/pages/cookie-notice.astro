@@ -1,0 +1,30 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import PageHero from "@components/PageHero.astro";
+import { cookieSections } from "@data/legal";
+---
+
+<BaseLayout
+  title="Cookie Notice | Clawsome"
+  description="Editable cookie and data notice template for the Clawsome website."
+  pathname="/cookie-notice/"
+>
+  <PageHero
+    eyebrow="Cookie notice"
+    title="A simple data notice, ready for final consent wording."
+    text="Tracking hooks are built into the site, but this page should be reviewed once the final analytics and consent setup are confirmed."
+  />
+
+  <section class="section" data-tone="paper">
+    <div class="container stack">
+      {cookieSections.map((section) => (
+        <article class="legal-panel rich-text" data-reveal>
+          <h2>{section.heading}</h2>
+          {section.body.map((paragraph) => (
+            <p>{paragraph}</p>
+          ))}
+        </article>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,65 @@
+<div class="estimator">
+  <form class="panel" data-tone="ink" data-roi-form>
+    <div class="field-grid">
+      <div class="field">
+        <label>
+          Hours lost each week
+          <input type="number" min="0" step="1" name="hoursLost" placeholder="8" />
+        </label>
+      </div>
+      <div class="field">
+        <label>
+          Approximate hourly cost
+          <input type="number" min="0" step="1" name="hourlyRate" placeholder="45" />
+        </label>
+      </div>
+      <div class="field">
+        <label>
+          Leads recovered each month
+          <input type="number" min="0" step="1" name="leadsRecovered" placeholder="4" />
+        </label>
+      </div>
+      <div class="field">
+        <label>
+          Estimated value per lead
+          <input type="number" min="0" step="1" name="leadValue" placeholder="800" />
+        </label>
+      </div>
+      <div class="field">
+        <label>
+          Weekly invoice or admin hours
+          <input type="number" min="0" step="1" name="invoiceHours" placeholder="5" />
+        </label>
+      </div>
+      <div class="field">
+        <label>
+          Quick-win area
+          <select name="area">
+            <option value="lead-response">Lead response</option>
+            <option value="meta-ads">Meta ads</option>
+            <option value="admin-recovery">Admin recovery</option>
+          </select>
+        </label>
+      </div>
+    </div>
+
+    <button class="button primary" type="submit">
+      Estimate the value
+    </button>
+  </form>
+
+  <aside class="estimator__result" data-reveal>
+    <p class="kicker">Indicative monthly value</p>
+    <div class="estimator__value" data-roi-output>£0</div>
+    <p class="muted" data-roi-narrative>
+      Add a few realistic numbers to sketch the likely value of a first bounded build.
+    </p>
+    <p class="badge-note">Use this as a planning prompt, not a guarantee.</p>
+  </aside>
+</div>
+
+<script>
+  import { initValueEstimator } from "../scripts/valueEstimator";
+
+  initValueEstimator();
+</script>

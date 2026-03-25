@@ -1,0 +1,40 @@
+---
+import ButtonLink from "./ButtonLink.astro";
+import { finalCta, getPrimaryCtaHref } from "@data/site";
+
+interface Props {
+  title?: string;
+  text?: string;
+  secondaryHref?: string;
+}
+
+const {
+  title = finalCta.title,
+  text = finalCta.text,
+  secondaryHref = "/contact/"
+} = Astro.props;
+---
+
+<section class="section" data-tone="signal">
+  <div class="container">
+    <div class="panel" data-tone="ink" data-reveal>
+      <span class="eyebrow">Next step</span>
+      <h2>{title}</h2>
+      <p class="muted">{text}</p>
+      <div class="button-row">
+        <ButtonLink
+          href={getPrimaryCtaHref()}
+          variant="primary"
+          external={getPrimaryCtaHref().startsWith("http")}
+          track="primary_cta_click"
+          trackLabel="Final CTA book audit"
+        >
+          {finalCta.primaryLabel}
+        </ButtonLink>
+        <ButtonLink href={secondaryHref} variant="secondary" track="secondary_cta_click" trackLabel="Final CTA review">
+          {finalCta.secondaryLabel}
+        </ButtonLink>
+      </div>
+    </div>
+  </div>
+</section>

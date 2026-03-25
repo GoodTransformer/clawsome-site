@@ -1,0 +1,18 @@
+---
+import type { TrustPrinciple } from "@data/types";
+
+interface Props {
+  items: TrustPrinciple[];
+}
+
+const { items } = Astro.props;
+---
+
+<div class="trust-grid">
+  {items.map((item) => (
+    <article class="trust-panel" data-reveal>
+      <h3>{item.title}</h3>
+      <p class="muted">{item.detail}</p>
+    </article>
+  ))}
+</div>

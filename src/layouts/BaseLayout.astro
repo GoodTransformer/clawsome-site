@@ -1,0 +1,76 @@
+---
+import "@styles/global.css";
+import AnalyticsTags from "@components/AnalyticsTags.astro";
+import SiteHeader from "@components/SiteHeader.astro";
+import SiteFooter from "@components/SiteFooter.astro";
+import { absoluteUrl, withBase } from "@data/paths";
+import { siteConfig } from "@data/site";
+
+interface Props {
+  title: string;
+  description?: string;
+  pathname?: string;
+  image?: string;
+  schema?: Record<string, unknown> | Array<Record<string, unknown>>;
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description = siteConfig.description,
+  pathname = "/",
+  image = siteConfig.defaultOgImage,
+  schema,
+  noindex = false
+} = Astro.props;
+
+const canonical = absoluteUrl(pathname, siteConfig.siteUrl);
+const imageUrl = absoluteUrl(image, siteConfig.siteUrl);
+const schemaList = Array.isArray(schema) ? schema : schema ? [schema] : [];
+---
+
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href={withBase("/favicons/favicon.svg")} type="image/svg+xml" />
+    <link rel="icon" href={withBase("/favicons/favicon-32x32.png")} sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href={withBase("/favicons/apple-touch-icon.png")} />
+    <link rel="manifest" href={withBase("/site.webmanifest")} />
+    <meta name="theme-color" content="#0b1011" />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={siteConfig.name} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={imageUrl} />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={imageUrl} />
+    <AnalyticsTags />
+    {schemaList.map((entry) => (
+      <script type="application/ld+json" is:inline set:html={JSON.stringify(entry)} />
+    ))}
+  </head>
+  <body>
+    <div class="page-shell">
+      <SiteHeader />
+      <slot />
+      <SiteFooter />
+    </div>
+  </body>
+</html>
+
+<script>
+  import { initTrackedLinks } from "../scripts/analytics";
+  import { initGlobalUi } from "../scripts/ui";
+
+  initTrackedLinks();
+  initGlobalUi();
+</script>

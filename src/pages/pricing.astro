@@ -1,0 +1,71 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import ButtonLink from "@components/ButtonLink.astro";
+import CTASection from "@components/CTASection.astro";
+import OfferCard from "@components/OfferCard.astro";
+import PageHero from "@components/PageHero.astro";
+import { offers } from "@data/offers";
+import { serviceSchema } from "@data/schema";
+---
+
+<BaseLayout
+  title="Pricing and Offers | Clawsome"
+  description="Indicative pricing for Clawsome's Agent Opportunity Audit, Quick-Win Agent Sprint, care plans, expansion builds, and managed operations."
+  pathname="/pricing/"
+  schema={serviceSchema(
+    "Pricing for AI agent setup services",
+    "The Clawsome offer ladder and indicative pricing for audits, quick-win builds, care plans, expansion work, and managed operations.",
+    "/pricing/"
+  )}
+>
+  <PageHero
+    eyebrow="Pricing and offers"
+    title="Clear price bands. Serious commercial framing."
+    text="The pricing ladder is there to make the buying path easy to understand. It should feel premium, bounded, and commercially legible rather than bargain-led."
+    bullets={[
+      "Paid audit to qualify the first workflow",
+      "Fixed-fee quick-win build",
+      "Expansion only after proof"
+    ]}
+  />
+
+  <section class="section" data-tone="paper">
+    <div class="container offer-list">
+      {offers.map((offer) => (
+        <OfferCard offer={offer} />
+      ))}
+    </div>
+  </section>
+
+  <section class="section" data-tone="sand">
+    <div class="container split-grid">
+      <article class="about-panel rich-text" data-reveal>
+        <span class="eyebrow">Commercial logic</span>
+        <h2>Why the ladder works.</h2>
+        <p>
+          A small paid diagnostic creates commitment without turning the first step into a heavy procurement process. The quick-win sprint then gives the business one useful agent live, with clear value and clear ownership.
+        </p>
+        <p>
+          Care plans, expansion builds, and managed operations come later, when the workflow has already earned trust.
+        </p>
+      </article>
+      <article class="about-panel rich-text" data-reveal>
+        <span class="eyebrow">What affects price</span>
+        <h2>Scope stays bounded on purpose.</h2>
+        <ul class="list">
+          <li>How many systems need to be connected</li>
+          <li>How much routing, drafting, or approval logic is involved</li>
+          <li>Whether the workflow needs live testing in a sensitive environment</li>
+          <li>How much operator training and documentation is required</li>
+        </ul>
+        <div class="button-row" style="margin-top: 1.5rem;">
+          <ButtonLink href="/contact/" variant="primary" track="primary_cta_click" trackLabel="Pricing page book audit">
+            Book a quick-win audit
+          </ButtonLink>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <CTASection />
+</BaseLayout>

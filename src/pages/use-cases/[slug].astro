@@ -1,0 +1,24 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import UseCaseTemplate from "@components/UseCaseTemplate.astro";
+import { serviceSchema } from "@data/schema";
+import { useCases } from "@data/useCases";
+
+export function getStaticPaths() {
+  return useCases.map((item) => ({
+    params: { slug: item.slug },
+    props: { useCase: item }
+  }));
+}
+
+const { useCase } = Astro.props;
+---
+
+<BaseLayout
+  title={`${useCase.name} | Clawsome`}
+  description={useCase.metaDescription}
+  pathname={`/use-cases/${useCase.slug}/`}
+  schema={serviceSchema(useCase.name, useCase.metaDescription, `/use-cases/${useCase.slug}/`)}
+>
+  <UseCaseTemplate useCase={useCase} />
+</BaseLayout>

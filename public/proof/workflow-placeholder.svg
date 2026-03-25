@@ -1,0 +1,17 @@
+<svg width="960" height="600" viewBox="0 0 960 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="960" height="600" rx="28" fill="#F4F0E8"/>
+  <rect x="52" y="78" width="360" height="370" rx="26" fill="white" stroke="rgba(11,16,17,0.1)"/>
+  <rect x="548" y="78" width="360" height="370" rx="26" fill="#101617" stroke="rgba(255,255,255,0.12)"/>
+  <text x="82" y="126" fill="#0B1011" font-family="Fraunces, Georgia, serif" font-size="38">Before</text>
+  <text x="578" y="126" fill="#F7F3EC" font-family="Fraunces, Georgia, serif" font-size="38">After</text>
+  <path d="M94 188H370" stroke="rgba(11,16,17,0.18)" stroke-width="18" stroke-linecap="round"/>
+  <path d="M94 244H342" stroke="rgba(11,16,17,0.18)" stroke-width="18" stroke-linecap="round"/>
+  <path d="M94 300H308" stroke="rgba(11,16,17,0.18)" stroke-width="18" stroke-linecap="round"/>
+  <path d="M94 356H286" stroke="rgba(11,16,17,0.18)" stroke-width="18" stroke-linecap="round"/>
+  <rect x="590" y="180" width="280" height="64" rx="20" fill="rgba(121,235,205,0.12)" stroke="rgba(121,235,205,0.5)"/>
+  <rect x="590" y="270" width="280" height="64" rx="20" fill="rgba(121,235,205,0.12)" stroke="rgba(121,235,205,0.5)"/>
+  <rect x="590" y="360" width="280" height="64" rx="20" fill="rgba(121,235,205,0.12)" stroke="rgba(121,235,205,0.5)"/>
+  <path d="M444 260H522" stroke="#1F9A88" stroke-width="6" stroke-linecap="round"/>
+  <path d="M492 228L528 260L492 292" stroke="#1F9A88" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="52" y="536" fill="#0B1011" font-family="Manrope, Arial, sans-serif" font-size="26">Use this slot for a real before-and-after workflow snapshot.</text>
+</svg>

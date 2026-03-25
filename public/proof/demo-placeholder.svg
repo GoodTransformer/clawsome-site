@@ -1,0 +1,16 @@
+<svg width="960" height="600" viewBox="0 0 960 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="960" height="600" rx="28" fill="#101617"/>
+  <rect x="34" y="34" width="892" height="532" rx="22" stroke="rgba(255,255,255,0.14)"/>
+  <circle cx="104" cy="92" r="9" fill="#79EBCD"/>
+  <circle cx="138" cy="92" r="9" fill="rgba(247,243,236,0.32)"/>
+  <circle cx="172" cy="92" r="9" fill="rgba(247,243,236,0.32)"/>
+  <rect x="88" y="152" width="784" height="308" rx="22" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)"/>
+  <path d="M228 332L370 224L470 288L602 192L720 258" stroke="#79EBCD" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="228" cy="332" r="13" fill="#79EBCD"/>
+  <circle cx="370" cy="224" r="13" fill="#79EBCD"/>
+  <circle cx="470" cy="288" r="13" fill="#79EBCD"/>
+  <circle cx="602" cy="192" r="13" fill="#79EBCD"/>
+  <circle cx="720" cy="258" r="13" fill="#79EBCD"/>
+  <text x="88" y="512" fill="#F7F3EC" font-family="Fraunces, Georgia, serif" font-size="40">Demo placeholder</text>
+  <text x="88" y="554" fill="rgba(247,243,236,0.74)" font-family="Manrope, Arial, sans-serif" font-size="24">Add a short screen recording of a live workflow once proof assets are ready.</text>
+</svg>

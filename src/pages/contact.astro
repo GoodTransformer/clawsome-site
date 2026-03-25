@@ -1,0 +1,80 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import ButtonLink from "@components/ButtonLink.astro";
+import ContactForm from "@components/ContactForm.astro";
+import PageHero from "@components/PageHero.astro";
+import { serviceSchema } from "@data/schema";
+import {
+  getContactEmailHref,
+  getPrimaryCtaHref,
+  isPlaceholderValue,
+  siteConfig
+} from "@data/site";
+
+const bookingHref = getPrimaryCtaHref();
+const formEndpoint = import.meta.env.PUBLIC_CONTACT_FORM_ENDPOINT || "";
+---
+
+<BaseLayout
+  title="Contact and Book Audit | Clawsome"
+  description="Book a quick-win audit, request a use-case review, or send a direct workflow enquiry to Clawsome."
+  pathname="/contact/"
+  schema={serviceSchema(
+    "Book a quick-win audit",
+    "Contact Clawsome to discuss the right first workflow, book an audit, or request a use-case review.",
+    "/contact/"
+  )}
+>
+  <PageHero
+    eyebrow="Contact"
+    title="Book a quick-win audit."
+    text="Use the booking route for the fastest next step, or send a short brief through the form if you want us to review the workflow first."
+    bullets={[
+      "Clear first-step conversation",
+      "No giant discovery process",
+      "Bounded quick-win focus"
+    ]}
+  />
+
+  <section class="section" data-tone="signal">
+    <div class="container contact-grid">
+      <div class="contact-panel rich-text" data-reveal>
+        <span class="eyebrow">Booking and contact</span>
+        <h2>Choose the route that fits.</h2>
+        <p>
+          If the workflow pain is already clear, go straight to the audit. If you need a quick sense-check first, send the form and we can frame the best first quick win.
+        </p>
+        <div class="button-row">
+          <ButtonLink
+            href={bookingHref}
+            variant="primary"
+            external={bookingHref.startsWith("http")}
+            track="booking_link_click"
+            trackLabel="Contact page booking"
+          >
+            Book a quick-win audit
+          </ButtonLink>
+          {!isPlaceholderValue(siteConfig.email) && (
+            <ButtonLink href={getContactEmailHref()} variant="secondary">
+              Email Clawsome
+            </ButtonLink>
+          )}
+        </div>
+        <div class="callout">
+          <strong>Reassurance:</strong> the first conversation is about identifying the right bounded workflow, not pushing you into a sprawling programme.
+        </div>
+        {isPlaceholderValue(siteConfig.email) && (
+          <p class="muted">
+            Replace the placeholder contact details in the site config before launch.
+          </p>
+        )}
+      </div>
+
+      <div class="contact-panel" data-reveal>
+        <span class="eyebrow">Audit request</span>
+        <h2>Send the workflow.</h2>
+        <ContactForm endpoint={formEndpoint} fallbackEmail={siteConfig.email} />
+      </div>
+    </div>
+  </section>
+</BaseLayout>

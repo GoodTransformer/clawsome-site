@@ -1,0 +1,26 @@
+---
+import type { UseCase } from "@data/types";
+import { withBase } from "@data/paths";
+
+interface Props {
+  item: UseCase;
+}
+
+const { item } = Astro.props;
+---
+
+<article class="use-case-panel" data-reveal>
+  <p class="kicker">{item.shortLabel}</p>
+  <h3>{item.name}</h3>
+  <p class="muted">{item.summary}</p>
+  <p>{item.whyItSells}</p>
+  <ul class="mini-meta">
+    {item.outcomes.slice(0, 2).map((outcome) => (
+      <li>{outcome}</li>
+    ))}
+  </ul>
+  <a class="panel-link" href={withBase(`/use-cases/${item.slug}/`)} data-track="use_case_page_view" data-track-label={item.name}>
+    <span>View use case</span>
+    <span aria-hidden="true">→</span>
+  </a>
+</article>

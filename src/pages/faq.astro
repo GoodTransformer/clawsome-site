@@ -1,0 +1,47 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import CTASection from "@components/CTASection.astro";
+import FAQAccordion from "@components/FAQAccordion.astro";
+import PageHero from "@components/PageHero.astro";
+import { faqs } from "@data/faqs";
+import { serviceSchema } from "@data/schema";
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer
+    }
+  }))
+};
+---
+
+<BaseLayout
+  title="FAQ | Clawsome"
+  description="Answers to the most common questions about Clawsome's quick-win agent builds, trust model, operator handover, and stack."
+  pathname="/faq/"
+  schema={[serviceSchema("Clawsome FAQ", "Plain-English answers about quick-win AI agents for SMEs.", "/faq/"), faqSchema]}
+>
+  <PageHero
+    eyebrow="FAQ"
+    title="Plain-English answers to the questions that actually matter."
+    text="These are the questions most buyers ask before they commit to a first workflow. The answers stay practical because the service itself is practical."
+    bullets={[
+      "Scope and timing",
+      "Operator ownership",
+      "Control and approvals"
+    ]}
+  />
+
+  <section class="section" data-tone="paper">
+    <div class="container">
+      <FAQAccordion items={faqs} />
+    </div>
+  </section>
+
+  <CTASection />
+</BaseLayout>

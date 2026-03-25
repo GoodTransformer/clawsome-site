@@ -1,0 +1,70 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import CTASection from "@components/CTASection.astro";
+import PageHero from "@components/PageHero.astro";
+import ProcessFlow from "@components/ProcessFlow.astro";
+import SectionIntro from "@components/SectionIntro.astro";
+import { detailedProcessSteps } from "@data/site";
+import { serviceSchema } from "@data/schema";
+---
+
+<BaseLayout
+  title="How It Works | Clawsome"
+  description="See how Clawsome takes an SME from workflow audit to bounded build, testing, operator training, handover, and expansion."
+  pathname="/how-it-works/"
+  schema={serviceSchema(
+    "Quick-win agent delivery process",
+    "The Clawsome process for finding the right workflow, building one bounded agent, proving value, and handing it over cleanly.",
+    "/how-it-works/"
+  )}
+>
+  <PageHero
+    eyebrow="How it works"
+    title="A practical delivery model from first audit to clean handover."
+    text="Clawsome does not drop a mysterious black box into the business and disappear. The process is operational, explicit, and built so your team can run the result."
+    bullets={[
+      "Bounded workflow selection",
+      "Testing and approval logic",
+      "Nominated operator training"
+    ]}
+  />
+
+  <section class="section" data-tone="sand">
+    <div class="container">
+      <SectionIntro
+        eyebrow="Delivery sequence"
+        title="Start with one useful workflow and make it real."
+        text="The front-door offer is designed to move quickly without cutting corners on control, training, or operational clarity."
+      />
+      <ProcessFlow steps={detailedProcessSteps} />
+    </div>
+  </section>
+
+  <section class="section" data-tone="paper">
+    <div class="container split-grid">
+      <article class="about-panel rich-text" data-reveal>
+        <span class="eyebrow">What you get</span>
+        <h2>Not just a build. A usable operating setup.</h2>
+        <ul class="list">
+          <li>A clear workflow boundary so the first build stays commercially sensible</li>
+          <li>The required integrations and routing for the agreed quick win</li>
+          <li>Approval points where the workflow needs human judgement</li>
+          <li>Testing with live examples before handover</li>
+          <li>Training for the nominated operator on your side</li>
+        </ul>
+      </article>
+      <article class="about-panel rich-text" data-reveal>
+        <span class="eyebrow">Why it converts</span>
+        <h2>It feels bounded because it is bounded.</h2>
+        <p>
+          SMEs do not need a giant theory deck. They need a buyer-friendly first step that can be understood quickly, governed properly, and tied to a result.
+        </p>
+        <p>
+          That is why the process starts with one useful workflow, one handover path, and one operator who knows how to supervise the outcome.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <CTASection />
+</BaseLayout>

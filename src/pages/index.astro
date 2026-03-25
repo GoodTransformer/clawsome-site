@@ -1,0 +1,166 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import ButtonLink from "@components/ButtonLink.astro";
+import CTASection from "@components/CTASection.astro";
+import HeroVisual from "@components/HeroVisual.astro";
+import OfferCard from "@components/OfferCard.astro";
+import ProcessFlow from "@components/ProcessFlow.astro";
+import ProofGallery from "@components/ProofGallery.astro";
+import SectionIntro from "@components/SectionIntro.astro";
+import TrustGrid from "@components/TrustGrid.astro";
+import UseCaseCard from "@components/UseCaseCard.astro";
+import ValueEstimator from "@components/ValueEstimator.astro";
+import { offers } from "@data/offers";
+import { withBase } from "@data/paths";
+import { proofAssets } from "@data/proof";
+import {
+  getPrimaryCtaHref,
+  homeProcessSteps,
+  isPlaceholderValue,
+  siteConfig,
+  trustPrinciples
+} from "@data/site";
+import { organisationSchema, serviceSchema, websiteSchema } from "@data/schema";
+import { useCases } from "@data/useCases";
+
+const primaryHref = getPrimaryCtaHref();
+---
+
+<BaseLayout
+  title="Clawsome | Practical AI agent setup for SMEs"
+  description="Agents work now. Clawsome sets up practical OpenClaw and Claude automations for high-value business workflows."
+  pathname="/"
+  schema={[
+    organisationSchema,
+    websiteSchema,
+    serviceSchema("AI agent setup for SMEs", siteConfig.description, "/")
+  ]}
+>
+  <section class="hero">
+    <div class="hero__inner">
+      <div class="hero__content">
+        <div class="hero__copy" data-reveal>
+          <div class="brand-signal">
+            <img src={withBase("/brand/clawsome-mark-light.svg")} alt="" width="52" height="52" />
+            <div class="brand-name">Clawsome</div>
+          </div>
+          <span class="eyebrow">Practical AI agent setup for SMEs</span>
+          <h1>Agents work now.</h1>
+          <p class="lede">
+            We can set them up for you and start your journey.
+          </p>
+          <p class="hero__note">
+            {siteConfig.shortDescription}
+          </p>
+          <div class="button-row" style="margin-top: 1.75rem;">
+            <ButtonLink
+              href={primaryHref}
+              variant="primary"
+              external={primaryHref.startsWith("http")}
+              track="primary_cta_click"
+              trackLabel="Hero book audit"
+            >
+              Book a quick-win audit
+            </ButtonLink>
+            <ButtonLink
+              href="/example-agents/"
+              variant="secondary"
+              track="secondary_cta_click"
+              trackLabel="Hero example agents"
+            >
+              See example agents
+            </ButtonLink>
+          </div>
+          <p class="badge-note" style="margin-top: 1.4rem;">
+            Secure by design, approval-led where needed, and built for real business workflows.
+          </p>
+        </div>
+
+        <div data-reveal>
+          <HeroVisual />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" data-tone="paper">
+    <div class="container">
+      <SectionIntro
+        eyebrow="Three entry points"
+        title="Three example agents, chosen because buyers get them quickly."
+        text="Clawsome is not asking people to buy an abstract AI future. These are vivid, bounded first wins with a clear commercial story."
+      />
+      <div class="use-case-grid">
+        {useCases.map((item) => (
+          <UseCaseCard item={item} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" data-tone="sand">
+    <div class="container">
+      <SectionIntro
+        eyebrow="How it works"
+        title="A clean buying path from drag to proof."
+        text="The delivery model is designed to feel bounded, sensible, and easy to supervise from the first conversation onwards."
+      />
+      <ProcessFlow steps={homeProcessSteps} />
+    </div>
+  </section>
+
+  <section class="section" data-tone="ink">
+    <div class="container">
+      <SectionIntro
+        eyebrow="Trust and control"
+        title="Serious deployment discipline, not AI theatre."
+        text="The point is practical automation under control. Sensitive actions stay approval-led where they should, and a nominated operator is trained to supervise the result."
+      />
+      <TrustGrid items={trustPrinciples} />
+    </div>
+  </section>
+
+  <section class="section" data-tone="paper">
+    <div class="container">
+      <SectionIntro
+        eyebrow="Offer snapshot"
+        title="A productised offer ladder built around one useful agent first."
+        text="The entry point stays easy to buy, the build stays bounded, and the expansion path only opens after proof."
+      />
+      <div class="offer-list">
+        {offers.slice(0, 4).map((offer) => (
+          <OfferCard offer={offer} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" data-tone="sand">
+    <div class="container">
+      <SectionIntro
+        eyebrow="Value sketch"
+        title="A rough way to frame the first win."
+        text="Use a few live numbers to see whether the drag is big enough to justify a bounded build. It is an estimate, not a promise."
+      />
+      <ValueEstimator />
+    </div>
+  </section>
+
+  <section class="section" data-tone="paper">
+    <div class="container">
+      <SectionIntro
+        eyebrow="Proof"
+        title="Designed to hold real proof as it arrives."
+        text="No fabricated case studies. The structure below is ready for live demos, before-and-after workflow snapshots, and short operational evidence blocks."
+      />
+      <ProofGallery items={proofAssets} />
+      {isPlaceholderValue(siteConfig.bookingUrl) && (
+        <p class="muted" style="margin-top: 1.5rem;">
+          Booking and proof assets are wired for easy replacement once the live links and demos are ready.
+        </p>
+      )}
+    </div>
+  </section>
+
+  <CTASection secondaryHref="/contact/" />
+</BaseLayout>

@@ -1,0 +1,69 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import CTASection from "@components/CTASection.astro";
+import PageHero from "@components/PageHero.astro";
+import SectionIntro from "@components/SectionIntro.astro";
+import TrustGrid from "@components/TrustGrid.astro";
+import { serviceSchema } from "@data/schema";
+import { trustPrinciples } from "@data/site";
+---
+
+<BaseLayout
+  title="Trust and Control | Clawsome"
+  description="See how Clawsome handles isolated deployment, least privilege access, approvals, visibility, and operator handover."
+  pathname="/trust-and-control/"
+  schema={serviceSchema(
+    "Trust and control for AI agent deployment",
+    "Clawsome explains its trust model in plain English, including bounded workflows, least privilege, approval-led actions, and operator supervision.",
+    "/trust-and-control/"
+  )}
+>
+  <PageHero
+    eyebrow="Trust and control"
+    title="Practical automation under control."
+    text="OpenClaw is powerful, which is exactly why the delivery model has to sound and operate like an adult service. The promise is not unrestricted automation. It is bounded automation with sensible supervision."
+    bullets={[
+      "Isolation first",
+      "Least privilege access",
+      "Operator visibility and handover"
+    ]}
+  />
+
+  <section class="section" data-tone="ink">
+    <div class="container">
+      <SectionIntro
+        eyebrow="Principles"
+        title="The trust model in plain English."
+        text="These are the habits that make a quick-win build easier to buy, easier to supervise, and safer to extend later."
+      />
+      <TrustGrid items={trustPrinciples} />
+    </div>
+  </section>
+
+  <section class="section" data-tone="paper">
+    <div class="container split-grid">
+      <article class="about-panel rich-text" data-reveal>
+        <span class="eyebrow">What approval-led means</span>
+        <h2>Sensitive actions can stay human-approved.</h2>
+        <p>
+          Financial, legal, or sensitive tasks do not need to be handed over blindly. The agent can prepare the work, route it cleanly, and ask for approval before the action is taken.
+        </p>
+        <p>
+          That keeps the repetitive groundwork automated while the real judgement stays with the business.
+        </p>
+      </article>
+      <article class="about-panel rich-text" data-reveal>
+        <span class="eyebrow">What handover means</span>
+        <h2>Your team does not get left with a mystery.</h2>
+        <p>
+          A nominated operator is trained on what the agent does, what it does not do, how to monitor it, and how to intervene when something needs human judgement.
+        </p>
+        <p>
+          The result should feel supervised and legible, not like an unknown box quietly running in the corner.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <CTASection />
+</BaseLayout>
