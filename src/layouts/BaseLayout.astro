@@ -29,6 +29,9 @@ const {
 const canonical = absoluteUrl(pathname, siteConfig.siteUrl);
 const imageUrl = absoluteUrl(image, siteConfig.siteUrl);
 const schemaList = Array.isArray(schema) ? schema : schema ? [schema] : [];
+const faviconVersion = "20260325b";
+const inlineFavicon =
+  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 160'%3E%3Crect width='160' height='160' rx='36' fill='%23FCF9F4'/%3E%3Cg transform='translate(18 14) scale(0.76)'%3E%3Cpath d='M94 30C82 22 68 18 55 18C27 18 12 42 12 80C12 118 27 142 55 142C68 142 82 138 94 130' stroke='%23B22624' stroke-width='28' stroke-linecap='butt' stroke-linejoin='miter' fill='none'/%3E%3Cpath d='M87 31L120 6L148 24L151 57L143 74L129 50L107 42L92 57L73 41Z' fill='%23B22624'/%3E%3Cpath d='M102 48L126 65L110 78L88 64Z' fill='%23B22624'/%3E%3Cpath d='M87 129L120 154L148 136L151 103L143 86L129 110L107 118L92 103L73 119Z' fill='%23B22624'/%3E%3Cpath d='M102 112L126 95L110 82L88 96Z' fill='%23B22624'/%3E%3C/g%3E%3C/svg%3E";
 ---
 
 <!doctype html>
@@ -39,10 +42,11 @@ const schemaList = Array.isArray(schema) ? schema : schema ? [schema] : [];
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
-    <link rel="icon" href={withBase("/favicons/favicon-32x32.png")} sizes="32x32" type="image/png" />
-    <link rel="icon" href={withBase("/favicons/favicon.svg")} type="image/svg+xml" sizes="any" />
-    <link rel="shortcut icon" href={withBase("/favicon.ico")} type="image/x-icon" />
-    <link rel="apple-touch-icon" href={withBase("/favicons/apple-touch-icon.png")} />
+    <link rel="icon" href={inlineFavicon} type="image/svg+xml" />
+    <link rel="icon" href={`${withBase("/favicons/favicon-32x32.png")}?v=${faviconVersion}`} sizes="32x32" type="image/png" />
+    <link rel="icon" href={`${withBase("/favicons/favicon.svg")}?v=${faviconVersion}`} type="image/svg+xml" sizes="any" />
+    <link rel="shortcut icon" href={`${withBase("/favicon.ico")}?v=${faviconVersion}`} type="image/x-icon" />
+    <link rel="apple-touch-icon" href={`${withBase("/favicons/apple-touch-icon.png")}?v=${faviconVersion}`} />
     <link rel="manifest" href={withBase("/site.webmanifest")} />
     <meta name="theme-color" content="#120f10" />
     {noindex && <meta name="robots" content="noindex, nofollow" />}
