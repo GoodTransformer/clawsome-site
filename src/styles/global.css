@@ -462,8 +462,11 @@ p {
   color: rgba(247, 242, 235, 0.48);
 }
 
-.hero-logo {
-  margin-bottom: 0.55rem;
+.hero-logo-line {
+  display: flex;
+  align-items: flex-end;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .hero-logo .logo-mark {
@@ -476,11 +479,12 @@ p {
 }
 
 .hero-brand-note {
-  font-size: clamp(0.8rem, 1.05vw, 0.88rem);
+  padding-bottom: 0.35rem;
+  font-size: clamp(0.72rem, 0.95vw, 0.82rem);
   font-weight: 680;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(247, 242, 235, 0.58);
+  color: rgba(247, 242, 235, 0.54);
 }
 
 .hero-text {
