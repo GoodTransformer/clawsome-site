@@ -441,11 +441,29 @@ p {
 .hero-copy {
   position: relative;
   z-index: 2;
-  max-width: 36rem;
+  max-width: 39rem;
+}
+
+.hero-brand-block {
+  margin-bottom: 1.6rem;
+}
+
+.hero-intro,
+.hero-brand-note {
+  margin: 0;
+}
+
+.hero-intro {
+  margin-bottom: 0.65rem;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(247, 242, 235, 0.66);
 }
 
 .hero-logo {
-  margin-bottom: 1.8rem;
+  margin-bottom: 0.55rem;
 }
 
 .hero-logo .logo-mark {
@@ -457,9 +475,15 @@ p {
   font-size: clamp(1.75rem, 3vw, 2.5rem);
 }
 
+.hero-brand-note {
+  font-size: clamp(1rem, 1.3vw, 1.12rem);
+  font-weight: 700;
+  color: rgba(247, 242, 235, 0.82);
+}
+
 .hero-text {
-  max-width: 27rem;
-  margin: 1rem 0 0;
+  max-width: 26rem;
+  margin: 0.9rem 0 0;
   color: var(--text-inverse-soft);
 }
 
