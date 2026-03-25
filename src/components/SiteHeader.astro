@@ -5,9 +5,11 @@ import { withBase } from "@data/paths";
 import { getPrimaryCtaHref, primaryNavigation } from "@data/site";
 
 const primaryHref = getPrimaryCtaHref();
+const normalizePath = (value: string) => (value !== "/" ? value.replace(/\/$/, "") : value);
+const isHome = normalizePath(Astro.url.pathname) === normalizePath(withBase("/"));
 ---
 
-<header class="site-header" data-site-header data-scrolled="false">
+<header class="site-header" data-site-header data-scrolled="false" data-home={isHome ? "true" : "false"}>
   <div class="site-header__inner">
     <a href={withBase("/")} aria-label="Clawsome home" class="site-brand">
       <Logo tone="dark" />
