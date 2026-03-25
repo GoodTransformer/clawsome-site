@@ -501,29 +501,63 @@ p {
 .hero-visual::before {
   content: "";
   position: absolute;
-  inset: 12% 4% 14% 14%;
+  inset: 14% 8% 16% 18%;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(178, 38, 36, 0.22) 0%, rgba(178, 38, 36, 0.08) 42%, transparent 74%);
   filter: blur(6px);
-  opacity: 0.9;
+  opacity: 0.72;
 }
 
-.hero-visual::after {
+.hero-brand-plane {
+  position: absolute;
+  inset: 5% 2% 4% 10%;
+}
+
+.hero-brand-plane__arc {
+  position: absolute;
+  inset: 4% 10% 8% 1%;
+  border: 1px solid rgba(247, 242, 235, 0.05);
+  border-right-color: transparent;
+  border-radius: 50%;
+  opacity: 0.72;
+}
+
+.hero-brand-plane__arc::before,
+.hero-brand-plane__arc::after {
   content: "";
   position: absolute;
-  inset: 5% 8% 8% 16%;
-  border: 1px solid rgba(247, 242, 235, 0.05);
+  border: 1px solid rgba(247, 242, 235, 0.035);
+  border-right-color: transparent;
   border-radius: 50%;
-  clip-path: inset(0 0 0 18% round 50%);
-  opacity: 0.75;
 }
 
-.hero-mark-ghost {
+.hero-brand-plane__arc::before {
+  inset: 8% 9% 8% 10%;
+}
+
+.hero-brand-plane__arc::after {
+  inset: 18% 18% 18% 19%;
+  border-color: rgba(178, 38, 36, 0.1);
+  border-right-color: transparent;
+}
+
+.hero-brand-plane__jaw {
   position: absolute;
-  inset: 2% 0 auto 10%;
-  width: min(42vw, 33rem);
-  opacity: 0.1;
-  transform: translate(1%, -2%);
+  right: 8%;
+  width: 28%;
+  aspect-ratio: 1 / 0.82;
+  background: linear-gradient(135deg, rgba(247, 242, 235, 0.08), rgba(247, 242, 235, 0.02));
+  clip-path: polygon(0 22%, 56% 0, 100% 18%, 98% 76%, 70% 100%, 35% 76%, 18% 58%);
+  opacity: 0.48;
+}
+
+.hero-brand-plane__jaw--top {
+  top: 9%;
+}
+
+.hero-brand-plane__jaw--bottom {
+  bottom: 10%;
+  transform: rotate(180deg);
 }
 
 .hero-mark-wrap {
@@ -1010,9 +1044,8 @@ p {
     min-height: clamp(22rem, 42vw, 30rem);
   }
 
-  .hero-mark-ghost {
-    width: min(44vw, 30rem);
-    inset-inline-start: 8%;
+  .hero-brand-plane {
+    inset: 5% 1% 5% 8%;
   }
 
   .hero-mark-wrap {
@@ -1073,10 +1106,13 @@ p {
     min-height: clamp(14rem, 34vw, 18rem);
   }
 
-  .hero-mark-ghost {
-    inset: -5% auto auto 46%;
-    width: min(60vw, 23rem);
-    transform: translateX(-50%);
+  .hero-brand-plane {
+    inset: 0 0 0 18%;
+  }
+
+  .hero-brand-plane__jaw {
+    right: 10%;
+    width: 24%;
   }
 
   .hero-mark-wrap {
@@ -1166,9 +1202,13 @@ p {
     min-height: 13rem;
   }
 
-  .hero-mark-ghost {
-    width: min(70vw, 20rem);
-    inset-inline-start: 50%;
+  .hero-brand-plane {
+    inset: 0 0 0 20%;
+  }
+
+  .hero-brand-plane__jaw {
+    width: 27%;
+    right: 8%;
   }
 
   .hero-mark-wrap {
