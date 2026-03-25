@@ -365,6 +365,32 @@ p {
 .brand-mark {
   width: 100%;
   height: auto;
+  overflow: visible;
+}
+
+.brand-mark__upper,
+.brand-mark__lower {
+  transform-box: fill-box;
+  transition: transform 180ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+.brand-mark__upper {
+  transform-origin: 92px 44px;
+}
+
+.brand-mark__lower {
+  transform-origin: 92px 116px;
+}
+
+.hero-mark-wrap:hover .brand-mark__upper,
+.site-brand:hover .brand-mark__upper {
+  transform: rotate(5deg) translateX(1px) translateY(1px);
+}
+
+.hero-mark-wrap:hover .brand-mark__lower,
+.site-brand:hover .brand-mark__lower {
+  transform: rotate(-5deg) translateX(1px) translateY(-1px);
 }
 
 .logo-lockup__word {

@@ -17,7 +17,7 @@ const color = palette[tone];
 ---
 
 <svg
-  viewBox="0 0 160 160"
+  viewBox="-18 -10 196 180"
   xmlns="http://www.w3.org/2000/svg"
   class="brand-mark"
   role={title ? "img" : undefined}
@@ -25,6 +25,7 @@ const color = palette[tone];
   aria-hidden={title ? undefined : "true"}
 >
   <path
+    class="brand-mark__body"
     d="M94 30C82 22 68 18 55 18C27 18 12 42 12 80C12 118 27 142 55 142C68 142 82 138 94 130"
     fill="none"
     stroke={color}
@@ -32,18 +33,22 @@ const color = palette[tone];
     stroke-linecap="butt"
     stroke-linejoin="miter"
   />
-  <path
-    d="M87 31L120 6L148 24L151 57L143 74L129 50L107 42L92 57L73 41Z M92 39A5 5 0 1 0 92 49A5 5 0 1 0 92 39Z"
-    fill={color}
-    fill-rule="evenodd"
-    clip-rule="evenodd"
-  />
-  <path
-    d="M87 129L120 154L148 136L151 103L143 86L129 110L107 118L92 103L73 119Z M92 111A5 5 0 1 0 92 121A5 5 0 1 0 92 111Z"
-    fill={color}
-    fill-rule="evenodd"
-    clip-rule="evenodd"
-  />
-  <path d="M102 48L126 65L110 78L88 64Z" fill={color} />
-  <path d="M102 112L126 95L110 82L88 96Z" fill={color} />
+  <g class="brand-mark__upper">
+    <path
+      d="M87 31L120 6L148 24L151 57L143 74L129 50L107 42L92 57L73 41Z M92 39A5 5 0 1 0 92 49A5 5 0 1 0 92 39Z"
+      fill={color}
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+    />
+    <path d="M102 48L126 65L110 78L88 64Z" fill={color} />
+  </g>
+  <g class="brand-mark__lower">
+    <path
+      d="M87 129L120 154L148 136L151 103L143 86L129 110L107 118L92 103L73 119Z M92 111A5 5 0 1 0 92 121A5 5 0 1 0 92 111Z"
+      fill={color}
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+    />
+    <path d="M102 112L126 95L110 82L88 96Z" fill={color} />
+  </g>
 </svg>
