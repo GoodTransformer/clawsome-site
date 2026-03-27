@@ -24,8 +24,8 @@ const primaryHref = getPrimaryCtaHref();
     <div class="hero-atmosphere" aria-hidden="true"></div>
     <div class="container hero-stage">
       <div class="hero-copy">
-        <h1>Agents work now.</h1>
-        <p class="hero-text">We set them up for you, starting with one useful workflow.</p>
+        <h1>Clawsome makes agents work.</h1>
+        <p class="hero-text">We set up one useful workflow first, then expand from proof.</p>
         <div class="button-row hero-actions">
           <ButtonLink
             href={primaryHref}
@@ -58,7 +58,10 @@ const primaryHref = getPrimaryCtaHref();
   <section class="section section-light">
     <div class="container">
       <div class="section-head section-head--split">
-        <h2>Three quick wins.</h2>
+        <div>
+          <h2>Three quick wins.</h2>
+          <p>Pick the bottleneck with the clearest payoff.</p>
+        </div>
         <ButtonLink href="/use-cases/" variant="ghost">
           Use cases
         </ButtonLink>
@@ -78,15 +81,17 @@ const primaryHref = getPrimaryCtaHref();
               <p class="case-line"><strong>Problem</strong>{item.problem}</p>
               <p class="case-line"><strong>Outcome</strong>{item.outcome}</p>
             </div>
-            <ul class="editorial-list editorial-list--compact">
-              {item.handles.slice(0, 2).map((detail) => (
-                <li>{detail}</li>
-              ))}
-            </ul>
-            <div class="case-block__cta">
-              <ButtonLink href={`/use-cases/#${item.slug}`} variant="ghost">
-                {item.ctaLabel}
-              </ButtonLink>
+            <div class="case-block__side">
+              <ul class="editorial-list editorial-list--compact">
+                {item.handles.slice(0, 2).map((detail) => (
+                  <li>{detail}</li>
+                ))}
+              </ul>
+              <div class="case-block__cta">
+                <ButtonLink href={`/use-cases/#${item.slug}`} variant="ghost">
+                  {item.ctaLabel}
+                </ButtonLink>
+              </div>
             </div>
           </article>
         ))}
@@ -98,7 +103,7 @@ const primaryHref = getPrimaryCtaHref();
     <div class="container">
       <div class="section-head">
         <h2>Built to land cleanly.</h2>
-        <p>OpenClaw for action. Claude for reasoning. Human sign-off where it matters.</p>
+        <p>One workflow. Clear logic. Human approval where it matters.</p>
       </div>
 
       <div class="operating-grid">
@@ -118,7 +123,7 @@ const primaryHref = getPrimaryCtaHref();
       <div class="section-head section-head--split">
         <div>
           <h2>Clear offers.</h2>
-          <p>Enough scope to buy with confidence.</p>
+          <p>Clear enough to buy without guesswork.</p>
         </div>
         <ButtonLink href="/pricing/" variant="ghost">
           Full pricing

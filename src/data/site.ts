@@ -7,10 +7,10 @@ const placeholderLinkedIn = "https://www.linkedin.com/company/replace-me";
 
 export const siteConfig = {
   name: "Clawsome",
-  tagLine: "Agents work now. We can set them up for you and start your journey.",
+  tagLine: "Clawsome makes agents work, starting with one useful workflow.",
   shortDescription: "Practical OpenClaw and Claude builds for SME workflows.",
   description:
-    "Clawsome sets up practical AI agents for SMEs. Start with one useful workflow, train the operator, and expand from proof.",
+    "Clawsome builds practical AI agents for SMEs. Start with one useful workflow, train the owner, and expand once it proves itself.",
   siteUrl:
     import.meta.env.PUBLIC_SITE_URL ||
     import.meta.env.SITE_URL ||
@@ -64,28 +64,28 @@ export const homeProcessSteps: ProcessStep[] = [
   {
     index: "01",
     title: "Find the workflow",
-    detail: "Pick one bounded pain worth fixing."
+    detail: "Choose one bounded problem worth fixing."
   },
   {
     index: "02",
     title: "Build the agent",
-    detail: "Required integrations only. Visible logic."
+    detail: "Use only the tools and approvals it needs."
   },
   {
     index: "03",
     title: "Train your operator",
-    detail: "A nominated owner learns the route."
+    detail: "Train one owner to run it with confidence."
   },
   {
     index: "04",
     title: "Prove before expansion",
-    detail: "Sensitive actions stay approved. Add more only after proof."
+    detail: "Keep sensitive actions approved. Expand only after proof."
   }
 ];
 
 export const finalCta = {
   title: "Tell us the workflow.",
-  text: "We will tell you if it is a strong first agent.",
+  text: "We will tell you if it is a strong first build.",
   primaryLabel: "Book an audit",
   secondaryLabel: "Contact Clawsome"
 };

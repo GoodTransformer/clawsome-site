@@ -5,11 +5,11 @@ export const useCases: UseCase[] = [
     slug: "meta-ads",
     name: "Meta Ads Agent",
     shortLabel: "Meta Ads",
-    headline: "Ship more tests without the copy drag.",
+    headline: "Launch more tests without the copy drag.",
     summary:
-      "Turns one offer into sharper variants, cleaner routing, and faster campaign setup.",
-    problem: "Briefs, asset chasing, and approval loops slow campaign launch.",
-    outcome: "More variants live with less production time.",
+      "Turns one offer into variants, routing, and faster campaign setup.",
+    problem: "Briefs, asset chasing, and approvals slow launch.",
+    outcome: "More variants go live with less production time.",
     handles: [
       "Drafts fresh angles and variants",
       "Routes copy, assets, and sign-off",
@@ -33,9 +33,9 @@ export const useCases: UseCase[] = [
     shortLabel: "Lead Response",
     headline: "Reply before the lead goes cold.",
     summary:
-      "Monitors enquiries, drafts the reply, and routes hotter prospects fast.",
-    problem: "Missed follow-up quietly kills meetings and pipeline.",
-    outcome: "Faster replies and fewer leads left sitting.",
+      "Watches enquiries, drafts replies, and routes hot prospects fast.",
+    problem: "Slow follow-up quietly kills meetings and pipeline.",
+    outcome: "Faster replies and fewer leads left waiting.",
     handles: [
       "Watches the agreed inbox or form",
       "Enriches and drafts first replies",
@@ -53,11 +53,11 @@ export const useCases: UseCase[] = [
     slug: "admin-recovery",
     name: "Admin Recovery Agent",
     shortLabel: "Admin Recovery",
-    headline: "Take the heat out of repetitive admin.",
+    headline: "Take the drag out of repetitive admin.",
     summary:
-      "Chases invoices, routes requests, and keeps routine coordination moving.",
+      "Chases invoices, routes requests, and keeps routine work moving.",
     problem: "Admin drag slows cash collection and clogs the queue.",
-    outcome: "Less backlog and better cash discipline.",
+    outcome: "Less backlog and steadier cash discipline.",
     handles: [
       "Invoice chasing and admin reminders",
       "Request and document routing",

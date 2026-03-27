@@ -16,7 +16,7 @@ export const offers: Offer[] = [
     summary: "Build one agent with the right tools, approvals, and handover.",
     bullets: [
       "One bounded workflow",
-      "Required integrations only",
+      "Only the integrations you need",
       "Testing, training, handover"
     ],
     ctaLabel: "Start the sprint"
@@ -25,8 +25,8 @@ export const offers: Offer[] = [
     slug: "care-plan",
     name: "Agent Care Plan",
     price: "£250 to £1,250 / month",
-    summary: "Keep the first agent sharp.",
-    bullets: ["Monitoring", "Prompt and logic updates", "Minor refinements"],
+    summary: "Keep the first agent working well.",
+    bullets: ["Monitoring", "Prompt and logic updates", "Small refinements"],
     ctaLabel: "Add care"
   },
   {
@@ -45,5 +45,5 @@ export const offers: Offer[] = [
 
 export const managedOperationsNote = {
   title: "Managed Agent Operations",
-  text: "Available later for teams running a wider estate of agents. Scoped by need."
+  text: "Available later for teams running multiple agents. Scoped by need."
 };
