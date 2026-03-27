@@ -1,0 +1,55 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Logo from "@components/Logo.astro";
+---
+
+<BaseLayout
+  title="Launch Post | Clawsome"
+  description="Why Clawsome starts with one useful workflow, keeps human approval where it matters, and expands only after proof."
+  pathname="/blog/launch-post/"
+>
+  <section class="page-hero">
+    <div class="container page-hero__shell page-hero__shell--single">
+      <div class="page-hero__copy">
+        <div class="page-hero__brand">
+          <Logo tone="dark" />
+        </div>
+        <h1>Launch post.</h1>
+        <p class="page-intro">Why Clawsome starts with one useful workflow and grows from proof.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-light">
+    <div class="container legal-shell">
+      <article class="legal-block">
+        <h2>What we are launching</h2>
+        <p>Clawsome helps SMEs put practical AI agents into real workflows. The aim is not to flood a business with automation. The aim is to get one useful agent working well, with a clear owner, clear approvals, and a clear commercial reason for existing.</p>
+      </article>
+
+      <article class="legal-block">
+        <h2>Why we start small</h2>
+        <p>Most teams do not need a giant AI programme on day one. They need one repetitive, valuable bottleneck removed. That is why we start with a bounded workflow, the minimum integrations required, and logic people can actually understand.</p>
+      </article>
+
+      <article class="legal-block">
+        <h2>What stays human</h2>
+        <p>Human approval stays in the loop where it matters. Budget decisions, sensitive messages, disputed cases, and final sign-off do not get thrown away in the name of speed. We think trust is part of the product, not a blocker to it.</p>
+      </article>
+
+      <article class="legal-block">
+        <h2>How it grows</h2>
+        <p>Once the first workflow proves itself, we expand from there. That means training the owner, checking the handover, watching the results, and only then adding the next agent. The shape is simple: prove one thing, then build on solid ground.</p>
+      </article>
+
+      <article class="legal-block">
+        <h2>What kinds of issues could be reported?</h2>
+        <p>At a simple level, the reports could fall into three broad types.</p>
+        <p><strong>1. Technical issues.</strong> Something has gone wrong in the machinery of agentic exchange. A payment hand-off has failed. A protocol has broken. One agent has misunderstood another agent’s schema, permissions or intent. The result may not be malicious, but it still matters because repeated technical failures can quietly shape trust in the whole system.</p>
+        <p><strong>2. Ethical or market issues.</strong> These are the harder, more emerging problems. An agent might notice swarms of unverified agents trying to game a market, distort rankings or manipulate prices. It might spot something closer to algorithmic collusion, where systems learn from each other and drift towards coordinated outcomes that harm users without any clear human conspiracy. It might also spot large-scale fake reviews, fake demand, or other forms of synthetic influence that make a market look more real, more popular or more competitive than it really is.</p>
+        <p><strong>3. Security issues.</strong> These are the sharpest risks. An agent might spot prompt injection, where hidden instructions try to hijack its behaviour. It might encounter tool poisoning, where a compromised tool, plugin or MCP server feeds it malicious or misleading context. Or it might detect memory poisoning, where an attacker corrupts what an agent remembers so later decisions become biased, manipulated or dangerous.</p>
+        <p>The point of the site is not to pretend these categories are neat. In practice, a single matter could be technical, ethical and security-related at the same time. But even a rough classification would help people see what kinds of failures are starting to appear.</p>
+      </article>
+    </div>
+  </section>
+</BaseLayout>
