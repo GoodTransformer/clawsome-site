@@ -7,19 +7,19 @@ struct IconSpec {
 }
 
 let workspace = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
-let sourceURL = workspace.appendingPathComponent("public/brand/clawsome-mark-small-light.svg")
+let sourceURL = workspace.appendingPathComponent("public/brand/clawsome-claw-mark-light.svg")
 let outputSpecs = [
-  IconSpec(size: 16, path: "public/favicons/favicon-16x16.png"),
-  IconSpec(size: 32, path: "public/favicons/favicon-32x32.png"),
-  IconSpec(size: 180, path: "public/favicons/apple-touch-icon.png"),
-  IconSpec(size: 192, path: "public/favicons/favicon-192x192.png"),
-  IconSpec(size: 512, path: "public/favicons/favicon-512x512.png")
+  IconSpec(size: 16, path: "public/favicons/claw-icon-16x16.png"),
+  IconSpec(size: 32, path: "public/favicons/claw-icon-32x32.png"),
+  IconSpec(size: 180, path: "public/favicons/claw-apple-touch-icon.png"),
+  IconSpec(size: 192, path: "public/favicons/claw-icon-192x192.png"),
+  IconSpec(size: 512, path: "public/favicons/claw-icon-512x512.png")
 ]
 
 let background = NSColor(calibratedRed: 178 / 255, green: 38 / 255, blue: 36 / 255, alpha: 1)
 let backgroundInsetRatio: CGFloat = 0.0
-let iconPaddingRatio: CGFloat = 0.16
-let opticalYOffsetRatio: CGFloat = -0.01
+let iconPaddingRatio: CGFloat = 0.14
+let opticalYOffsetRatio: CGFloat = 0.0
 let cornerRadiusRatio: CGFloat = 0.22
 
 guard
