@@ -43,7 +43,7 @@ export function getAbsoluteSiteUrl(path: string) {
 
 export const primaryNavigation: NavItem[] = [
   { label: "Use Cases", href: "/use-cases/" },
-  { label: "Read Launch Post", href: "/blog/launch-post/" },
+  { label: "How It Works", href: "/#how-it-works" },
   { label: "Pricing", href: "/pricing/" },
   { label: "Contact", href: "/contact/" }
 ];
