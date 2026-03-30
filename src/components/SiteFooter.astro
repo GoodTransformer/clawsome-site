@@ -3,11 +3,8 @@ import Logo from "./Logo.astro";
 import { withBase } from "@data/paths";
 import {
   footerNavigation,
-  getContactEmailHref,
   getPrimaryCtaHref,
-  isPlaceholderValue,
-  legalNavigation,
-  siteConfig
+  legalNavigation
 } from "@data/site";
 
 const primaryHref = getPrimaryCtaHref();
@@ -19,7 +16,7 @@ const primaryHref = getPrimaryCtaHref();
       <a href={withBase("/")} aria-label="Clawsome home">
         <Logo tone="light" />
       </a>
-      <p>One useful agent first. Practical OpenClaw and Claude builds for SME workflows.</p>
+      <p>We set up practical AI agents for SMEs.</p>
     </div>
 
     <nav class="footer-nav" aria-label="Footer">
@@ -36,14 +33,10 @@ const primaryHref = getPrimaryCtaHref();
       >
         Book an audit
       </a>
-      {!isPlaceholderValue(siteConfig.email) && (
-        <a href={getContactEmailHref()}>{siteConfig.email}</a>
-      )}
     </div>
   </div>
 
   <div class="container footer-meta">
-    <p>{siteConfig.credibilityNote}</p>
     <div class="footer-legal">
       {legalNavigation.map((item) => (
         <a href={withBase(item.href)}>{item.label}</a>

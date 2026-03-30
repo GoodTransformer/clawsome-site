@@ -7,10 +7,10 @@ const placeholderLinkedIn = "https://www.linkedin.com/company/replace-me";
 
 export const siteConfig = {
   name: "Clawsome",
-  tagLine: "Clawsome makes agents work, starting with one useful workflow.",
-  shortDescription: "Practical OpenClaw and Claude builds for SME workflows.",
+  tagLine: "We set up your first useful AI agent.",
+  shortDescription: "We set up practical AI agents for SMEs.",
   description:
-    "Clawsome builds practical AI agents for SMEs. Start with one useful workflow, train the owner, and expand once it proves itself.",
+    "Clawsome sets up practical AI agents for SMEs. We find the right workflow, build it properly, and train your team to run it.",
   siteUrl:
     import.meta.env.PUBLIC_SITE_URL ||
     import.meta.env.SITE_URL ||
@@ -42,14 +42,15 @@ export function getAbsoluteSiteUrl(path: string) {
 }
 
 export const primaryNavigation: NavItem[] = [
-  { label: "Use Cases", href: "/use-cases/" },
-  { label: "How It Works", href: "/#how-it-works" },
+  { label: "How We Work", href: "/#how-it-works" },
+  { label: "Example Agents", href: "/use-cases/" },
   { label: "Pricing", href: "/pricing/" },
   { label: "Contact", href: "/contact/" }
 ];
 
 export const footerNavigation: NavItem[] = [
-  { label: "Use Cases", href: "/use-cases/" },
+  { label: "How We Work", href: "/#how-it-works" },
+  { label: "Example Agents", href: "/use-cases/" },
   { label: "Pricing", href: "/pricing/" },
   { label: "Contact", href: "/contact/" }
 ];
@@ -63,29 +64,28 @@ export const legalNavigation: NavItem[] = [
 export const homeProcessSteps: ProcessStep[] = [
   {
     index: "01",
-    title: "Find the workflow",
-    detail: "Choose one bounded problem worth fixing."
+    title: "Find the right workflow",
+    detail:
+      "We sit with you, look at how the work really moves, and pick the first job worth turning into an agent."
   },
   {
     index: "02",
-    title: "Build the agent",
-    detail: "Use only the tools and approvals it needs."
+    title: "Set it up properly",
+    detail:
+      "We connect the tools, put the checks in place, and make the workflow work in the real business."
   },
   {
     index: "03",
-    title: "Train your operator",
-    detail: "Train one owner to run it with confidence."
-  },
-  {
-    index: "04",
-    title: "Prove before expansion",
-    detail: "Keep sensitive actions approved. Expand only after proof."
+    title: "Train your team",
+    detail:
+      "We hand it over cleanly, train your staff, and help you build from one useful agent to a more agentic way of working."
   }
 ];
 
 export const finalCta = {
+  label: "Next step",
   title: "Tell us the workflow.",
-  text: "We will tell you if it is a strong first build.",
+  text: "We will tell you whether it is a good fit for a first agent, and how we would set it up.",
   primaryLabel: "Book an audit",
   secondaryLabel: "Contact Clawsome"
 };

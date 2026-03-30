@@ -10,12 +10,12 @@ const primaryHref = getPrimaryCtaHref();
 ---
 
 <BaseLayout
-  title="Use Cases | Clawsome"
-  description="Three clear quick-win use cases for SMEs: Meta Ads, Lead Response, and Admin Recovery."
+  title="Example Agents | Clawsome"
+  description="Three clear first-agent examples for SMEs: Lead Response, Marketing Ops, and Admin Recovery."
   pathname="/use-cases/"
   schema={serviceSchema(
-    "Quick-win AI agent use cases",
-    "Three fast, commercially legible ways for SMEs to start with Clawsome.",
+    "Example AI agents for SMEs",
+    "Three clear examples of first AI agents for SMEs.",
     "/use-cases/"
   )}
 >
@@ -25,8 +25,8 @@ const primaryHref = getPrimaryCtaHref();
         <div class="page-hero__brand">
           <Logo tone="dark" />
         </div>
-        <h1>Three easy ways to start.</h1>
-        <p class="page-intro">Pick growth, follow-up, or admin. Start where the value is easiest to see.</p>
+        <h1>Examples of first agents we can set up.</h1>
+        <p class="page-intro">These are examples, not a fixed menu. The job is to find the right first workflow and get it working properly.</p>
       </div>
     </div>
   </section>
@@ -64,7 +64,7 @@ const primaryHref = getPrimaryCtaHref();
               </ul>
             </div>
             <div>
-              <p class="mini-heading">Commercial outcomes</p>
+              <p class="mini-heading">Outcomes</p>
               <ul class="editorial-list editorial-list--compact">
                 {item.results.map((detail) => (
                   <li>{detail}</li>
@@ -87,8 +87,8 @@ const primaryHref = getPrimaryCtaHref();
   <section class="section section-cta">
     <div class="container closing-shell">
       <div>
-        <h2>Choose the workflow with the clearest value.</h2>
-        <p>That is usually the right first build.</p>
+        <h2>Tell us where the hours are going.</h2>
+        <p>We will tell you if it is a good fit for a first agent.</p>
       </div>
       <div class="button-row">
         <ButtonLink href={primaryHref} variant="primary" external={primaryHref.startsWith("http")}>

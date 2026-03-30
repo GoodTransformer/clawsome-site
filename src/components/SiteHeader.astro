@@ -1,10 +1,11 @@
 ---
 import Logo from "./Logo.astro";
 import { withBase } from "@data/paths";
-import { primaryNavigation } from "@data/site";
+import { getPrimaryCtaHref, primaryNavigation } from "@data/site";
 
 const normalizePath = (value: string) => (value !== "/" ? value.replace(/\/$/, "") : value);
 const isHome = normalizePath(Astro.url.pathname) === normalizePath(withBase("/"));
+const primaryHref = getPrimaryCtaHref();
 ---
 
 <header class="site-header" data-site-header data-scrolled="false" data-home={isHome ? "true" : "false"}>
@@ -20,6 +21,16 @@ const isHome = normalizePath(Astro.url.pathname) === normalizePath(withBase("/")
     </nav>
 
     <div class="nav-actions">
+      {!isHome && (
+        <a
+          href={withBase(primaryHref)}
+          class="button secondary nav-cta"
+          target={primaryHref.startsWith("http") ? "_blank" : undefined}
+          rel={primaryHref.startsWith("http") ? "noreferrer" : undefined}
+        >
+          Book an audit
+        </a>
+      )}
       <button
         class="menu-toggle"
         type="button"
