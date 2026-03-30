@@ -1,7 +1,6 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
 import ButtonLink from "@components/ButtonLink.astro";
-import Logo from "@components/Logo.astro";
 import { serviceSchema } from "@data/schema";
 import { getPrimaryCtaHref } from "@data/site";
 import { useCases } from "@data/useCases";
@@ -22,9 +21,6 @@ const primaryHref = getPrimaryCtaHref();
   <section class="page-hero">
     <div class="container page-hero__shell page-hero__shell--single">
       <div class="page-hero__copy">
-        <div class="page-hero__brand">
-          <Logo tone="dark" />
-        </div>
         <h1>Examples of first agents we can set up.</h1>
         <p class="page-intro">These are examples, not a fixed menu. The job is to find the right first workflow and get it working properly.</p>
       </div>

@@ -2,7 +2,6 @@
 import BaseLayout from "@layouts/BaseLayout.astro";
 import ButtonLink from "@components/ButtonLink.astro";
 import ContactForm from "@components/ContactForm.astro";
-import Logo from "@components/Logo.astro";
 import { serviceSchema } from "@data/schema";
 import {
   getContactEmailHref,
@@ -29,9 +28,6 @@ const bookingTarget = isPlaceholderValue(siteConfig.bookingUrl) ? "#audit-form" 
   <section class="page-hero">
     <div class="container page-hero__shell page-hero__shell--single">
       <div class="page-hero__copy">
-        <div class="page-hero__brand">
-          <Logo tone="dark" />
-        </div>
         <h1>Tell us the workflow.</h1>
         <p class="page-intro">We will tell you if it is a strong first build.</p>
       </div>

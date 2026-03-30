@@ -2,7 +2,6 @@
 import BaseLayout from "@layouts/BaseLayout.astro";
 import ButtonLink from "@components/ButtonLink.astro";
 import FAQAccordion from "@components/FAQAccordion.astro";
-import Logo from "@components/Logo.astro";
 import { faqs } from "@data/faqs";
 import { managedOperationsNote, offers } from "@data/offers";
 import { serviceSchema } from "@data/schema";
@@ -40,9 +39,6 @@ const faqSchema = {
   <section class="page-hero">
     <div class="container page-hero__shell page-hero__shell--single">
       <div class="page-hero__copy">
-        <div class="page-hero__brand">
-          <Logo tone="dark" />
-        </div>
         <h1>Clear price bands.</h1>
         <p class="page-intro">Enough scope to buy with confidence. No vague add-ons.</p>
       </div>
