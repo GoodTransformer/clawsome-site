@@ -2,9 +2,11 @@
 import BaseLayout from "@layouts/BaseLayout.astro";
 import ButtonLink from "@components/ButtonLink.astro";
 import BrandMark from "@components/BrandMark.astro";
+import Logo from "@components/Logo.astro";
 import { offers } from "@data/offers";
+import { withBase } from "@data/paths";
 import { serviceSchema, organisationSchema, websiteSchema } from "@data/schema";
-import { finalCta, getPrimaryCtaHref, homeProcessSteps, siteConfig } from "@data/site";
+import { finalCta, getPrimaryCtaHref, homeProcessSteps, primaryNavigation, siteConfig } from "@data/site";
 import { useCases } from "@data/useCases";
 
 const primaryHref = getPrimaryCtaHref();
@@ -16,6 +18,7 @@ const showLayoutTuner = import.meta.env.DEV;
   title="Clawsome | Practical AI agents for SMEs"
   description="We set up your first useful AI agent by finding the right workflow, building it properly, and training your team to run it."
   pathname="/"
+  hideHeader={true}
   schema={[
     organisationSchema,
     websiteSchema,
@@ -25,13 +28,21 @@ const showLayoutTuner = import.meta.env.DEV;
   <section class="hero">
     <div class="hero-atmosphere" aria-hidden="true"></div>
     <div class="container hero-stage hero-stage--tight">
+      <nav class="hero-nav hero-nav--floating" aria-label="Primary">
+        {primaryNavigation.map((item) => (
+          <a href={withBase(item.href)}>{item.label}</a>
+        ))}
+      </nav>
+
       <div class="hero-copy">
-        <p class="hero-eyebrow">FOR UK SME<span class="hero-eyebrow__suffix">s</span></p>
+        <div class="hero-brand">
+          <Logo tone="light" />
+        </div>
         <h1>We set up your first useful AI agent.</h1>
         <p class="hero-text">
           First we find the right workflow. Then we build it, make it work, and train your team to run it.
+          Start with one agent doing a job that used to take hours.
         </p>
-        <p class="hero-support">Start with one agent doing a job that used to take hours.</p>
         <div class="button-row hero-actions">
           <ButtonLink
             href={primaryHref}
@@ -63,15 +74,11 @@ const showLayoutTuner = import.meta.env.DEV;
 
   <section class="section section-light" id="how-it-works">
     <div class="container">
-      <div class="section-head section-head--wide">
-        <p class="section-kicker">How we work</p>
-        <h2>We find it. We build it. We hand it over.</h2>
-        <p>
-          We do not drop generic AI tools into the business and hope for the best. We work out where an agent will actually help, set it up properly, and train your staff so it sticks.
-        </p>
+      <div class="section-head section-head--compact">
+        <h2>How we work</h2>
       </div>
 
-      <div class="home-grid home-grid--three">
+      <div class="home-grid home-grid--three home-grid--process">
         {homeProcessSteps.map((step) => (
           <article class="home-card home-card--process">
             <p class="home-card__index">{step.index}</p>
@@ -87,15 +94,11 @@ const showLayoutTuner = import.meta.env.DEV;
 
   <section class="section section-light">
     <div class="container">
-      <div class="section-head section-head--wide">
-        <p class="section-kicker">Example agents</p>
-        <h2>Examples of first agents we can set up.</h2>
-        <p>
-          These are examples, not a fixed menu. The job is to find the right first workflow in your business and get it working properly.
-        </p>
+      <div class="section-head section-head--compact">
+        <h2>Example Agents</h2>
       </div>
 
-      <div class="home-grid home-grid--three">
+      <div class="home-grid home-grid--three home-grid--feature">
         {useCases.map((item, index) => (
           <article class="home-card home-card--usecase">
             <p class="home-card__index">0{index + 1}</p>
@@ -118,13 +121,11 @@ const showLayoutTuner = import.meta.env.DEV;
 
   <section class="section section-tint">
     <div class="container">
-      <div class="section-head section-head--wide">
-        <p class="section-kicker">Pricing</p>
-        <h2>Clear first steps.</h2>
-        <p>Start small. Get one agent working. Build from there.</p>
+      <div class="section-head section-head--compact">
+        <h2>Pricing</h2>
       </div>
 
-      <div class="home-grid home-grid--three">
+      <div class="home-grid home-grid--three home-grid--pricing-columns">
         {pricingOffers.map((offer) => (
           <article class="home-card home-card--pricing">
             <div class="home-card__copy">
@@ -146,7 +147,6 @@ const showLayoutTuner = import.meta.env.DEV;
   <section class="section section-cta">
     <div class="container closing-shell">
       <div>
-        <p class="section-kicker section-kicker--light">{finalCta.label}</p>
         <h2>{finalCta.title}</h2>
         <p>{finalCta.text}</p>
       </div>
@@ -175,124 +175,151 @@ const showLayoutTuner = import.meta.env.DEV;
 
         const root = document.documentElement;
         const mark = document.querySelector(".hero-mark-wrap");
-        if (!(mark instanceof HTMLElement)) return;
+        const nav = document.querySelector(".hero-nav--floating");
+        if (!(mark instanceof HTMLElement) && !(nav instanceof HTMLElement)) return;
 
-        document.body.dataset.layoutTune = "hero-mark";
-        mark.tabIndex = 0;
+        document.body.dataset.layoutTune = "on";
 
-        const storageKey = "clawsome:hero-mark-nudge";
-        const stored = (() => {
-          try {
-            return JSON.parse(window.localStorage.getItem(storageKey) || "{}");
-          } catch {
-            return {};
-          }
-        })();
+        const createTuner = (element, options, index) => {
+          if (!(element instanceof HTMLElement)) return;
 
-        const state = {
-          x: Number.isFinite(stored.x) ? stored.x : 0,
-          y: Number.isFinite(stored.y) ? stored.y : 0
-        };
+          element.tabIndex = 0;
 
-        const panel = document.createElement("div");
-        panel.className = "layout-tuner";
-        panel.innerHTML = `
-          <strong>Hero mark tuner</strong>
-          <p>Drag the C. Arrow keys nudge it.</p>
-          <code data-layout-values></code>
-          <div class="layout-tuner__actions">
-            <button type="button" data-layout-copy>Copy values</button>
-            <button type="button" data-layout-reset>Reset</button>
-          </div>
-        `;
-        document.body.append(panel);
+          const stored = (() => {
+            try {
+              return JSON.parse(window.localStorage.getItem(options.storageKey) || "{}");
+            } catch {
+              return {};
+            }
+          })();
 
-        const values = panel.querySelector("[data-layout-values]");
-        const copyButton = panel.querySelector("[data-layout-copy]");
-        const resetButton = panel.querySelector("[data-layout-reset]");
-
-        const apply = () => {
-          root.style.setProperty("--hero-mark-nudge-x", `${state.x}px`);
-          root.style.setProperty("--hero-mark-nudge-y", `${state.y}px`);
-          if (values instanceof HTMLElement) {
-            values.textContent = `x ${state.x}px, y ${state.y}px`;
-          }
-          window.localStorage.setItem(storageKey, JSON.stringify(state));
-        };
-
-        const nudge = (dx, dy) => {
-          state.x += dx;
-          state.y += dy;
-          apply();
-        };
-
-        let drag = null;
-
-        mark.addEventListener("pointerdown", (event) => {
-          if (event.button !== 0) return;
-          drag = {
-            startX: event.clientX,
-            startY: event.clientY,
-            originX: state.x,
-            originY: state.y
+          const state = {
+            x: Number.isFinite(stored.x) ? stored.x : 0,
+            y: Number.isFinite(stored.y) ? stored.y : 0
           };
-          mark.dataset.dragging = "true";
-          mark.setPointerCapture(event.pointerId);
-          event.preventDefault();
-        });
 
-        mark.addEventListener("pointermove", (event) => {
-          if (!drag) return;
-          state.x = Math.round(drag.originX + (event.clientX - drag.startX));
-          state.y = Math.round(drag.originY + (event.clientY - drag.startY));
+          const panel = document.createElement("div");
+          panel.className = "layout-tuner";
+          panel.style.bottom = `${1 + index * 8}rem`;
+          panel.innerHTML = `
+            <strong>${options.title}</strong>
+            <p>${options.description}</p>
+            <code data-layout-values></code>
+            <div class="layout-tuner__actions">
+              <button type="button" data-layout-copy>Copy values</button>
+              <button type="button" data-layout-reset>Reset</button>
+            </div>
+          `;
+          document.body.append(panel);
+
+          const values = panel.querySelector("[data-layout-values]");
+          const copyButton = panel.querySelector("[data-layout-copy]");
+          const resetButton = panel.querySelector("[data-layout-reset]");
+
+          const apply = () => {
+            root.style.setProperty(options.xVar, `${state.x}px`);
+            root.style.setProperty(options.yVar, `${state.y}px`);
+            if (values instanceof HTMLElement) {
+              values.textContent = `x ${state.x}px, y ${state.y}px`;
+            }
+            window.localStorage.setItem(options.storageKey, JSON.stringify(state));
+          };
+
+          const nudge = (dx, dy) => {
+            state.x += dx;
+            state.y += dy;
+            apply();
+          };
+
+          let drag = null;
+
+          element.addEventListener("pointerdown", (event) => {
+            if (event.button !== 0) return;
+            drag = {
+              startX: event.clientX,
+              startY: event.clientY,
+              originX: state.x,
+              originY: state.y
+            };
+            element.dataset.dragging = "true";
+            element.setPointerCapture(event.pointerId);
+            element.focus();
+            event.preventDefault();
+          });
+
+          element.addEventListener("pointermove", (event) => {
+            if (!drag) return;
+            state.x = Math.round(drag.originX + (event.clientX - drag.startX));
+            state.y = Math.round(drag.originY + (event.clientY - drag.startY));
+            apply();
+          });
+
+          const stopDrag = (event) => {
+            if (!drag) return;
+            drag = null;
+            element.dataset.dragging = "false";
+            if (element.hasPointerCapture(event.pointerId)) {
+              element.releasePointerCapture(event.pointerId);
+            }
+          };
+
+          element.addEventListener("pointerup", stopDrag);
+          element.addEventListener("pointercancel", stopDrag);
+
+          element.addEventListener("keydown", (event) => {
+            const step = event.shiftKey ? 10 : 1;
+
+            if (event.key === "ArrowLeft") nudge(-step, 0);
+            else if (event.key === "ArrowRight") nudge(step, 0);
+            else if (event.key === "ArrowUp") nudge(0, -step);
+            else if (event.key === "ArrowDown") nudge(0, step);
+            else return;
+
+            event.preventDefault();
+          });
+
+          copyButton?.addEventListener("click", async () => {
+            const text = `${options.xVar}: ${state.x}px; ${options.yVar}: ${state.y}px;`;
+            try {
+              await navigator.clipboard.writeText(text);
+              copyButton.textContent = "Copied";
+              window.setTimeout(() => {
+                copyButton.textContent = "Copy values";
+              }, 1200);
+            } catch {
+              if (values instanceof HTMLElement) values.textContent = text;
+            }
+          });
+
+          resetButton?.addEventListener("click", () => {
+            state.x = 0;
+            state.y = 0;
+            apply();
+          });
+
           apply();
-        });
-
-        const stopDrag = (event) => {
-          if (!drag) return;
-          drag = null;
-          mark.dataset.dragging = "false";
-          if (mark.hasPointerCapture(event.pointerId)) {
-            mark.releasePointerCapture(event.pointerId);
-          }
         };
 
-        mark.addEventListener("pointerup", stopDrag);
-        mark.addEventListener("pointercancel", stopDrag);
+        createTuner(mark, {
+          title: "Hero mark tuner",
+          description: "Drag the C. Arrow keys nudge it.",
+          storageKey: "clawsome:hero-mark-nudge",
+          xVar: "--hero-mark-nudge-x",
+          yVar: "--hero-mark-nudge-y"
+        }, 0);
 
-        window.addEventListener("keydown", (event) => {
-          if (!document.body.dataset.layoutTune) return;
-          const step = event.shiftKey ? 10 : 1;
+        createTuner(nav, {
+          title: "Hero nav tuner",
+          description: "Drag the nav. Arrow keys nudge it.",
+          storageKey: "clawsome:hero-nav-nudge",
+          xVar: "--hero-nav-nudge-x",
+          yVar: "--hero-nav-nudge-y"
+        }, 1);
 
-          if (event.key === "ArrowLeft") nudge(-step, 0);
-          else if (event.key === "ArrowRight") nudge(step, 0);
-          else if (event.key === "ArrowUp") nudge(0, -step);
-          else if (event.key === "ArrowDown") nudge(0, step);
-          else return;
-
+        nav?.addEventListener("click", (event) => {
           event.preventDefault();
+          event.stopPropagation();
         });
-
-        copyButton?.addEventListener("click", async () => {
-          const text = `--hero-mark-nudge-x: ${state.x}px; --hero-mark-nudge-y: ${state.y}px;`;
-          try {
-            await navigator.clipboard.writeText(text);
-            copyButton.textContent = "Copied";
-            window.setTimeout(() => {
-              copyButton.textContent = "Copy values";
-            }, 1200);
-          } catch {
-            if (values instanceof HTMLElement) values.textContent = text;
-          }
-        });
-
-        resetButton?.addEventListener("click", () => {
-          state.x = 0;
-          state.y = 0;
-          apply();
-        });
-
-        apply();
       })();
     </script>
   )}

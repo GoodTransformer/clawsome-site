@@ -1,13 +1,7 @@
 ---
 import Logo from "./Logo.astro";
 import { withBase } from "@data/paths";
-import {
-  footerNavigation,
-  getPrimaryCtaHref,
-  legalNavigation
-} from "@data/site";
-
-const primaryHref = getPrimaryCtaHref();
+import { legalNavigation } from "@data/site";
 ---
 
 <footer class="site-footer">
@@ -19,28 +13,10 @@ const primaryHref = getPrimaryCtaHref();
       <p>We set up practical AI agents for SMEs.</p>
     </div>
 
-    <nav class="footer-nav" aria-label="Footer">
-      {footerNavigation.map((item) => (
-        <a href={withBase(item.href)}>{item.label}</a>
-      ))}
-    </nav>
-
-    <div class="footer-links">
-      <a
-        href={primaryHref}
-        target={primaryHref.startsWith("http") ? "_blank" : undefined}
-        rel={primaryHref.startsWith("http") ? "noreferrer" : undefined}
-      >
-        Book an audit
-      </a>
-    </div>
-  </div>
-
-  <div class="container footer-meta">
-    <div class="footer-legal">
+    <nav class="footer-legal" aria-label="Legal">
       {legalNavigation.map((item) => (
         <a href={withBase(item.href)}>{item.label}</a>
       ))}
-    </div>
+    </nav>
   </div>
 </footer>
