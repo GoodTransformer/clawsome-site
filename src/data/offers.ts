@@ -15,7 +15,6 @@ export const offers: Offer[] = [
     price: "£2,500 to £6,000",
     summary: "We set up one useful agent with the right checks, testing, and handover.",
     bullets: [
-      "One bounded workflow",
       "Required integrations",
       "Testing and setup",
       "Training and handover"
