@@ -3,33 +3,26 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import ButtonLink from "@components/ButtonLink.astro";
 import ContactForm from "@components/ContactForm.astro";
 import { serviceSchema } from "@data/schema";
-import {
-  getContactEmailHref,
-  getPrimaryCtaHref,
-  isPlaceholderValue,
-  siteConfig
-} from "@data/site";
+import { siteConfig } from "@data/site";
 
-const bookingHref = getPrimaryCtaHref();
 const formEndpoint = import.meta.env.PUBLIC_CONTACT_FORM_ENDPOINT || "";
-const bookingTarget = isPlaceholderValue(siteConfig.bookingUrl) ? "#audit-form" : bookingHref;
 ---
 
 <BaseLayout
   title="Contact | Clawsome"
-  description="Tell Clawsome the workflow. We will tell you if it is a good first agent."
+  description="Tell us what needs fixing. We will tell you if it is a good fit for a first agent."
   pathname="/contact/"
   schema={serviceSchema(
     "Contact Clawsome",
-    "Tell Clawsome the workflow and get a view on whether it is a strong first AI agent build.",
+    "Tell Clawsome what needs fixing and get a view on whether it is a good fit for a first agent.",
     "/contact/"
   )}
 >
   <section class="page-hero">
     <div class="container page-hero__shell page-hero__shell--single">
       <div class="page-hero__copy">
-        <h1>Tell us the workflow.</h1>
-        <p class="page-intro">We will tell you if it is a strong first build.</p>
+        <h1>Tell us what needs fixing.</h1>
+        <p class="page-intro">We will tell you if it is a good fit for a first agent.</p>
       </div>
     </div>
   </section>
@@ -37,32 +30,23 @@ const bookingTarget = isPlaceholderValue(siteConfig.bookingUrl) ? "#audit-form" 
   <section class="section section-light">
     <div class="container contact-shell">
       <aside class="contact-aside">
-        <h2>Take the clearest next step.</h2>
-        <p>If the workflow is clear, book the audit. If not, send the brief.</p>
+        <h2>Get in touch.</h2>
+        <p>Send us the workflow and we will come back with the best next step.</p>
         <div class="button-row">
           <ButtonLink
-            href={bookingTarget}
+            href="#contact-form"
             variant="primary"
-            external={bookingTarget.startsWith("http")}
-            track="booking_link_click"
-            trackLabel="Contact page book audit"
+            track="primary_cta_click"
+            trackLabel="Contact page send workflow"
           >
-            Book an audit
+            Send us the workflow
           </ButtonLink>
-          {!isPlaceholderValue(siteConfig.email) && (
-            <ButtonLink href={getContactEmailHref()} variant="secondary">
-              Email Clawsome
-            </ButtonLink>
-          )}
         </div>
-        <div class="contact-note">
-          <p>OpenClaw for action. Claude for reasoning. Human approval where it matters.</p>
-          <p>{siteConfig.credibilityNote}</p>
-        </div>
+        <p class="contact-aside__line">Clear setup. Clean handover. Staff training included.</p>
       </aside>
 
-      <div class="contact-form-shell" id="audit-form">
-        <h2>Send the workflow.</h2>
+      <div class="contact-form-shell" id="contact-form">
+        <h2>Send us the workflow.</h2>
         <ContactForm endpoint={formEndpoint} fallbackEmail={siteConfig.email} />
       </div>
     </div>
