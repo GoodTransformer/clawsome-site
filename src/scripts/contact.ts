@@ -10,13 +10,13 @@ function isPlaceholderEmail(email: string) {
 }
 
 function buildMailtoUrl(formData: FormData, email: string) {
-  const subject = encodeURIComponent("Clawsome quick-win audit request");
+  const subject = encodeURIComponent("Clawsome workflow request");
   const lines = [
     `Name: ${formData.get("name") || ""}`,
     `Business: ${formData.get("business") || ""}`,
     `Email: ${formData.get("email") || ""}`,
-    `Workflow drag: ${formData.get("workflow") || ""}`,
-    `Best quick win: ${formData.get("quickWin") || ""}`,
+    `Where time goes: ${formData.get("workflow") || ""}`,
+    `Best first agent: ${formData.get("quickWin") || ""}`,
     "",
     `${formData.get("message") || ""}`
   ];
